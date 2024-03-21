@@ -6,9 +6,7 @@ class CarrousselManager extends AbstractManager {
   }
 
   findAll() {
-    return this.database.query(
-      `SELECT article.title, article.content, article.date FROM article JOIN ${this.table} ON article.id_article = ${this.table}.id_article ORDER BY article.date DESC LIMIT 9`
-    );
+    return this.database.query(`SELECT * FROM ${this.table}`);
   }
 }
 

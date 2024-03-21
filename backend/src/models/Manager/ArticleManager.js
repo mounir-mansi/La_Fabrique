@@ -9,6 +9,12 @@ class ArticleManager extends AbstractManager {
     return this.database.query(`SELECT * FROM ${this.table}`);
   }
 
+  findLatest() {
+    return this.database.query(
+      `SELECT title, content, date FROM ${this.table} ORDER BY date DESC LIMIT 9`
+    );
+  }
+
   find(id) {
     return this.database.query(
       `SELECT * FROM ${this.table} WHERE id_article = ?`,

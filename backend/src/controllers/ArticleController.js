@@ -11,6 +11,18 @@ const getArticles = (req, res) => {
       res.sendStatus(500);
     });
 };
+
+const getLatestArticles = (req, res) => {
+  models.article
+    .findLatest()
+    .then((articles) => {
+      res.send(articles);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
 const getArticleById = (req, res) => {
   models.article
     .find(req.params.id)
@@ -73,6 +85,7 @@ const deleteArticle = (req, res) => {
 
 module.exports = {
   getArticles,
+  getLatestArticles,
   getArticleById,
   addArticle,
   editArticle,
