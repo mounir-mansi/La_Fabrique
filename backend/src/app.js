@@ -26,9 +26,11 @@ app.use(
 
 const ArticleRouter = require("./routers/ArticleRouter");
 const CarrousselRouter = require("./routers/CarrousselRouter");
+const ContactRouter = require("./routers/ContactRouter");
 
 app.use(ArticleRouter);
 app.use(CarrousselRouter);
+app.use(ContactRouter);
 
 // serve the `backend/public` folder for public resources
 
