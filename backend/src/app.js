@@ -25,8 +25,10 @@ app.use(
 // import and mount the API routes
 
 const ArticleRouter = require("./routers/ArticleRouter");
+const CarrousselRouter = require("./routers/CarrousselRouter");
 
 app.use(ArticleRouter);
+app.use(CarrousselRouter);
 
 // serve the `backend/public` folder for public resources
 

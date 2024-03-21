@@ -30,9 +30,13 @@ pool.getConnection().catch(() => {
 const models = {};
 
 const ArticleManager = require("./Manager/ArticleManager");
+const CarrousselManager = require("./Manager/CarrousselManager");
 
 models.article = new ArticleManager();
 models.article.setDatabase(pool);
+
+models.carroussel = new CarrousselManager();
+models.carroussel.setDatabase(pool);
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
