@@ -32,6 +32,7 @@ const models = {};
 const ArticleManager = require("./Manager/ArticleManager");
 const CarrousselManager = require("./Manager/CarrousselManager");
 const ContactManager = require("./Manager/ContactManager");
+const FooterManager = require("./Manager/FooterManager");
 
 models.article = new ArticleManager();
 models.article.setDatabase(pool);
@@ -41,6 +42,9 @@ models.carroussel.setDatabase(pool);
 
 models.contact = new ContactManager();
 models.contact.setDatabase(pool);
+
+models.footer = new FooterManager();
+models.footer.setDatabase(pool);
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
