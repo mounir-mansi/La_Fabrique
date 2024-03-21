@@ -26,8 +26,11 @@
   "author": "Wild Code School",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/eslint-parser": "^7.24.1",
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
     "husky": "^8.0.3"
   }
 }
