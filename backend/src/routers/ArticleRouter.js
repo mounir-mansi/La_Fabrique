@@ -17,7 +17,7 @@ router.get("/article/:id", ArticleController.getArticleById);
 router.post("/article", ArticleController.addArticle);
 
 // Update an existing article
-router.put("/article/:id", ArticleController.editArticle);
+router.put("/article/:id", ArticleController.updateArticle);
 
 // Delete an article
 router.delete("/article/:id", ArticleController.deleteArticle);

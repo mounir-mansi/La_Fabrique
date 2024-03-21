@@ -1,7 +1,7 @@
 const models = require("../models");
 
-const getArticles = (req, res) => {
-  models.article
+const getHero = (req, res) => {
+  models.hero
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -12,19 +12,8 @@ const getArticles = (req, res) => {
     });
 };
 
-const getLatestArticles = (req, res) => {
-  models.article
-    .findLatest()
-    .then((articles) => {
-      res.send(articles);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-const getArticleById = (req, res) => {
-  models.article
+const getHerobyId = (req, res) => {
+  models.hero
     .find(req.params.id)
     .then(([rows]) => {
       if (rows.length === 0) {
@@ -39,16 +28,12 @@ const getArticleById = (req, res) => {
     });
 };
 
-const addArticle = (req, res) => {
-  const article = req.body;
-  if (req.file) {
-    article.Image = req.file.filename;
-  }
-
-  models.article
-    .insert(article)
+const addHero = (req, res) => {
+  const hero = req.body;
+  models.hero
+    .insert(hero)
     .then(([result]) => {
-      res.location(`/article/${result.insertId}`).sendStatus(201);
+      res.location(`/hero/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -56,12 +41,11 @@ const addArticle = (req, res) => {
     });
 };
 
-const updateArticle = (req, res) => {
-  const article = req.body;
-  article.id = parseInt(req.params.id, 10);
-
-  models.article
-    .update(article)
+const updateHero = (req, res) => {
+  const hero = req.body;
+  hero.id = parseInt(req.params.id, 10);
+  models.hero
+    .update(hero)
     .then(() => {
       res.sendStatus(204);
     })
@@ -71,8 +55,8 @@ const updateArticle = (req, res) => {
     });
 };
 
-const deleteArticle = (req, res) => {
-  models.article
+const deleteHero = (req, res) => {
+  models.hero
     .delete(req.params.id)
     .then(() => {
       res.sendStatus(204);
@@ -84,10 +68,9 @@ const deleteArticle = (req, res) => {
 };
 
 module.exports = {
-  getArticles,
-  getLatestArticles,
-  getArticleById,
-  addArticle,
-  updateArticle,
-  deleteArticle,
+  getHero,
+  getHerobyId,
+  addHero,
+  updateHero,
+  deleteHero,
 };

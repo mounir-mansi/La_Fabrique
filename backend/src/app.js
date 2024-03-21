@@ -28,11 +28,13 @@ const ArticleRouter = require("./routers/ArticleRouter");
 const CarrousselRouter = require("./routers/CarrousselRouter");
 const ContactRouter = require("./routers/ContactRouter");
 const FooterRouter = require("./routers/FooterRouter");
+const HeroRouter = require("./routers/HeroRouter");
 
 app.use(ArticleRouter);
 app.use(CarrousselRouter);
 app.use(ContactRouter);
 app.use(FooterRouter);
+app.use(HeroRouter);
 
 // serve the `backend/public` folder for public resources
 

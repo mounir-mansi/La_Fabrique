@@ -33,6 +33,7 @@ const ArticleManager = require("./Manager/ArticleManager");
 const CarrousselManager = require("./Manager/CarrousselManager");
 const ContactManager = require("./Manager/ContactManager");
 const FooterManager = require("./Manager/FooterManager");
+const HeroManager = require("./Manager/HeroManager");
 
 models.article = new ArticleManager();
 models.article.setDatabase(pool);
@@ -45,8 +46,9 @@ models.contact.setDatabase(pool);
 
 models.footer = new FooterManager();
 models.footer.setDatabase(pool);
-// bonus: use a proxy to personalize error message,
-// when asking for a non existing model
+
+models.hero = new HeroManager();
+models.hero.setDatabase(pool);
 
 const handler = {
   get(obj, prop) {
