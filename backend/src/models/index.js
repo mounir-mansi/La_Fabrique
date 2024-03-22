@@ -29,13 +29,26 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-const ItemManager = require("./ItemManager");
+const ArticleManager = require("./Manager/ArticleManager");
+const CarrousselManager = require("./Manager/CarrousselManager");
+const ContactManager = require("./Manager/ContactManager");
+const FooterManager = require("./Manager/FooterManager");
+const HeroManager = require("./Manager/HeroManager");
 
-models.item = new ItemManager();
-models.item.setDatabase(pool);
+models.article = new ArticleManager();
+models.article.setDatabase(pool);
 
-// bonus: use a proxy to personalize error message,
-// when asking for a non existing model
+models.carroussel = new CarrousselManager();
+models.carroussel.setDatabase(pool);
+
+models.contact = new ContactManager();
+models.contact.setDatabase(pool);
+
+models.footer = new FooterManager();
+models.footer.setDatabase(pool);
+
+models.hero = new HeroManager();
+models.hero.setDatabase(pool);
 
 const handler = {
   get(obj, prop) {
