@@ -34,6 +34,11 @@ const CarrousselManager = require("./Manager/CarrousselManager");
 const ContactManager = require("./Manager/ContactManager");
 const FooterManager = require("./Manager/FooterManager");
 const HeroManager = require("./Manager/HeroManager");
+const NavbarManager = require("./Manager/NavbarManager");
+const PartnerManager = require("./Manager/PartnerManager");
+const SectionManager = require("./Manager/SectionManager");
+const TeamManager = require("./Manager/TeamManager");
+const ThemeManager = require("./Manager/ThemeManager");
 
 models.article = new ArticleManager();
 models.article.setDatabase(pool);
@@ -49,6 +54,21 @@ models.footer.setDatabase(pool);
 
 models.hero = new HeroManager();
 models.hero.setDatabase(pool);
+
+const navbarManager = new NavbarManager();
+navbarManager.setDatabase(pool); // Assurez-vous que "pool" est votre connexion à la base de données
+
+const partnerManager = new PartnerManager();
+partnerManager.setDatabase(pool);
+
+const sectionManager = new SectionManager();
+sectionManager.setDatabase(pool);
+
+const teamManager = new TeamManager();
+teamManager.setDatabase(pool);
+
+const themeManager = new ThemeManager();
+themeManager.setDatabase(pool);
 
 const handler = {
   get(obj, prop) {

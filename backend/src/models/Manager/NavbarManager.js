@@ -1,82 +1,41 @@
-const models = require("..");
+const AbstractManager = require("../AbstractManager/AbstractManager");
 
-const getNavbarElement = (req, res) => {
-  models.navbar
-    .findAll()
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const getNavbarElementByID = (req, res) => {
-  models.navbar
-    .findByPK(req.params.id)
-    .then(([rows]) => {
-      if (rows[0] == null) {
-        res.sendStatus(404);
-      } else {
-        res.send(rows[0]);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const createNavbarElement = (req, res) => {
-  const navbar = req.body;
-  const userID = req.User_ID;
-  if (req.file) {
-    navbar.Image = req.file.filename;
+class ContactManager extends AbstractManager {
+  constructor() {
+    super({ table: "navbar" });
   }
-  console.info("creation navbar element", navbar);
-  models.navbar
-    .insert(navbar, userID)
-    .then(([result]) => {
-      res.location(`/navbars/${result.insertId}`).sendStatus(201);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
 
-const updateNavbarElement = (req, res) => {
-  const navbar = req.body;
-  navbar.id = parseInt(req.params.id, 10);
+  findAll() {
+    return this.database.query(`select * from  ${this.table}`);
+  }
 
-  models.navbar
-    .update(navbar)
-    .then(() => {
-      res.status(204).send("Successfully updated navbar Element");
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
+  find(id) {
+    return this.database.query(
+      `select * from  ${this.table} where id_navbar = ?`,
+      [id]
+    );
+  }
 
-const deleteNavbarElement = (req, res) => {
-  models.navbar
-    .delete(req.params.id)
-    .then(() => {
-      res.status(204).send("Successfully deleted Navbar Element");
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
+  insert(navbar) {
+    return this.database.query(
+      `INSERT INTO ${this.table} (id_hero, title) VALUES (?, ?)`,
+      [navbar.id_hero, navbar.title]
+    );
+  }
 
-module.exports = {
-  getNavbarElement,
-  getNavbarElementByID,
-  createNavbarElement,
-  updateNavbarElement,
-  deleteNavbarElement,
-};
+  update(navbar) {
+    return this.database.query(
+      `UPDATE ${this.table} SET id_hero = ?, title = ? WHERE id_navbar = ?`,
+      [navbar.id_hero, navbar.title, navbar.id_navbar]
+    );
+  }
+
+  delete(id) {
+    return this.database.query(
+      `DELETE FROM ${this.table} WHERE id_navbar = ?`,
+      [id]
+    );
+  }
+}
+
+module.exports = ContactManager;
