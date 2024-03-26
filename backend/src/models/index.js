@@ -55,8 +55,8 @@ models.footer.setDatabase(pool);
 models.hero = new HeroManager();
 models.hero.setDatabase(pool);
 
-const navbarManager = new NavbarManager();
-navbarManager.setDatabase(pool); // Assurez-vous que "pool" est votre connexion à la base de données
+models.navbar = new NavbarManager();
+models.navbar.setDatabase(pool);
 
 const partnerManager = new PartnerManager();
 partnerManager.setDatabase(pool);

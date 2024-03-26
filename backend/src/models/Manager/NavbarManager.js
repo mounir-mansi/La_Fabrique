@@ -1,12 +1,12 @@
 const AbstractManager = require("../AbstractManager/AbstractManager");
 
-class ContactManager extends AbstractManager {
+class NavbarManager extends AbstractManager {
   constructor() {
     super({ table: "navbar" });
   }
 
   findAll() {
-    return this.database.query(`select * from  ${this.table}`);
+    return this.database.query(`SELECT * FROM ${this.table}`);
   }
 
   find(id) {
@@ -38,4 +38,4 @@ class ContactManager extends AbstractManager {
   }
 }
 
-module.exports = ContactManager;
+module.exports = NavbarManager;

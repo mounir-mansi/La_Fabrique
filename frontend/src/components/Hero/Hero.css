@@ -1,0 +1,17 @@
+.Hero {
+  background-color: #333;
+  height: 45vh;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Hero > h1 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.LogoHome {
+  height: 250px;
+}
