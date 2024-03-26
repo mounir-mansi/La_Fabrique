@@ -1,28 +1,50 @@
 .Navbar {
-  background-color: black;
+  background-color: none;
   color: white;
-  padding: 10px;
+  padding: 1.1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
+  transition: background-color 0.3s ease;
+}
+
+.Navbar.scrolled {
+  background-color: black;
 }
 
 .Navbar > a > img {
   height: 40px;
-  margin-right: 10px;
+  margin-right: 1em;
 }
 
 ul {
   list-style-type: none;
-  margin: 0;
+  margin-right: auto;
   padding: 0;
   display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 li {
-  margin-right: 10px;
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+ul > li > a {
+  text-decoration: none;
+  color: white;
+}
+
+ul > li > a:hover {
+  color: #63105b;
+}
+
+.Lang:hover {
+  color: #63105b;
 }
 
 ul > li,

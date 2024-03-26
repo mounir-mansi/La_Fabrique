@@ -1,9 +1,10 @@
-import "./Navbar.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../assets/Logo/PNG/LOGO-LF-BLANC-SOLO.png";
+import "./Navbar.css";
 
 function Navbar() {
   const [navbarItems, setNavbarItems] = useState([]);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const fetchNavbarItems = async () => {
@@ -22,7 +23,25 @@ function Navbar() {
     fetchNavbarItems();
   }, []);
 
-  // Mappage des ID aux chemins correspondants
+  useEffect(() => {
+    const handleScroll = () => {
+      // Vérifiez la position de défilement verticale
+      if (window.scrollY > 0) {
+        setIsScrolled(true); // Si le défilement est vers le bas, activez la classe de défilement
+      } else {
+        setIsScrolled(false); // Sinon, désactivez la classe de défilement
+      }
+    };
+
+    // Ajoutez un écouteur d'événements pour gérer le défilement
+    window.addEventListener("scroll", handleScroll);
+
+    // Nettoyez l'écouteur d'événements lors du démontage du composant
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const idToPathMap = {
     1: "/qui-sommes-nous",
     2: "/intervention-et-animation",
@@ -32,22 +51,23 @@ function Navbar() {
     6: "https://google.fr",
   };
 
-  // Fonction pour générer les chemins en fonction des ID
-  const generatePath = (id) => idToPathMap[id] || "/"; // Par défaut, renvoie "/" si l'ID n'est pas trouvé
+  const generatePath = (id) => idToPathMap[id] || "/";
 
   return (
-    <div className="Navbar">
+    <div className={`Navbar${isScrolled ? " scrolled" : ""}`}>
       <a href="/">
         <img src={Logo} alt="Logo La Fabrique" />
       </a>
       <ul>
         {navbarItems.map((item) => (
           <li key={item.id_navbar}>
-            <a href={generatePath(item.id_navbar)}>{item.title.trim()}</a>
+            <a href={generatePath(item.id_navbar)}>{item.title.trim()} |</a>
           </li>
         ))}
       </ul>
-      <div className="Lang">FR / EN</div>
+      <div className="Lang">FR</div>
+      <div style={{ margin: "0 0.5em" }}> | </div>
+      <div className="Lang">EN</div>
     </div>
   );
 }
