@@ -25,18 +25,18 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Vérifiez la position de défilement verticale
+      // Vérifie la position de défilement verticale
       if (window.scrollY > 0) {
-        setIsScrolled(true); // Si le défilement est vers le bas, activez la classe de défilement
+        setIsScrolled(true); // Si le défilement est vers le bas, active la classe de défilement
       } else {
-        setIsScrolled(false); // Sinon, désactivez la classe de défilement
+        setIsScrolled(false); // Sinon, désactive la classe de défilement
       }
     };
 
-    // Ajoutez un écouteur d'événements pour gérer le défilement
+    // Ajoute un écouteur d'événements pour gérer le défilement
     window.addEventListener("scroll", handleScroll);
 
-    // Nettoyez l'écouteur d'événements lors du démontage du composant
+    // Nettoye l'écouteur d'événements lors du démontage du composant
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

@@ -4,7 +4,8 @@
   color: white;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -13,5 +14,6 @@
 }
 
 .LogoHome {
-  height: 250px;
+  height: 14vw;
+  width: auto;
 }
