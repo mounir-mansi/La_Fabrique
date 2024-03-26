@@ -22,16 +22,34 @@ function Navbar() {
     fetchNavbarItems();
   }, []);
 
+  // Mappage des ID aux chemins correspondants
+  const idToPathMap = {
+    1: "/qui-sommes-nous",
+    2: "/intervention-et-animation",
+    3: "/formation",
+    4: "/accompagnement-au-portage-de-projet",
+    5: "/contact",
+    6: "https://google.fr",
+  };
+
+  // Fonction pour générer les chemins en fonction des ID
+  const generatePath = (id) => idToPathMap[id] || "/"; // Par défaut, renvoie "/" si l'ID n'est pas trouvé
+
   return (
     <div className="Navbar">
-      <img src={Logo} alt="Logo La Fabrique" />
+      <a href="/">
+        <img src={Logo} alt="Logo La Fabrique" />
+      </a>
       <ul>
         {navbarItems.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id_navbar}>
+            <a href={generatePath(item.id_navbar)}>{item.title.trim()}</a>
+          </li>
         ))}
       </ul>
       <div className="Lang">FR / EN</div>
     </div>
   );
 }
+
 export default Navbar;

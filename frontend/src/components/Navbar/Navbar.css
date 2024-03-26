@@ -9,7 +9,7 @@
   top: 0;
 }
 
-.Navbar > img {
+.Navbar > a > img {
   height: 40px;
   margin-right: 10px;
 }
