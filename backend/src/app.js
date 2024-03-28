@@ -17,10 +17,24 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
     optionsSuccessStatus: 200,
   })
 );
+
+app.use(cors());
+
+// app.use(cors());
+// app.use("/upload", express.static(path.join(__dirname, "../assets/upload")));
+
+// app.use(cors());
+
+app.use(cors());
+
+// app.use(cors());
+// app.use("/upload", express.static(path.join(__dirname, "../assets/upload")));
+
+// app.use(cors());
 
 // app.use(cors());
 // app.use("/upload", express.static(path.join(__dirname, "../assets/upload")));

@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ArticleScreen from "./pages/Article/ArticleScreen";
 import Contact from "./pages/Contact/Contact";
 import Formation from "./pages/Formation/Formation";
 import QuiSommesNous from "./pages/QuiSommesNous/QuiSommesNous";
 import InterventionEtAnimation from "./pages/InterventionEtAnimation/InterventionEtAnimation";
 import AccompagnementAuPortageDeProjet from "./pages/AccompagnementAuPortageDeProjet/AccompagnementAuPortageDeProjet";
 import App from "./App";
+
+import { ArticleProvider } from "./context/ArticleContext";
 
 const route = createBrowserRouter([
   {
@@ -33,10 +36,16 @@ const route = createBrowserRouter([
     path: "/contact",
     element: <Contact />,
   },
+  {
+    path: "/article/:id",
+    element: <ArticleScreen />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={route} />
+    <ArticleProvider>
+      <RouterProvider router={route} />
+    </ArticleProvider>
   </React.StrictMode>
 );
