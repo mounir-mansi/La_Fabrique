@@ -1,12 +1,15 @@
 import React from "react";
-import "./Contact.css";
+import "./ContactScreen.css";
+import ContactInfo from "../../components/Contact/ContactInfo";
 import Navbar from "../../components/Navbar/Navbar";
 
 function Contact() {
   return (
     <div>
       <Navbar />
-      <div>Contact</div>
+      <div className="screen">
+        <ContactInfo />
+      </div>
     </div>
   );
 }

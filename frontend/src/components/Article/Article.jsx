@@ -103,7 +103,11 @@ function Article() {
           <br />
           <br />
           <div className="content-img">
-            <img className="img" src="../src/assets/img.png" alt="rrr" />
+            <img
+              className="picture-article"
+              src="../src/assets/img.png"
+              alt="rrr"
+            />
           </div>
           <p>Date : {formatDate(articleSpecify.date)}</p>
           <ArticleNavigation

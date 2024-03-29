@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ArticleScreen from "./pages/Article/ArticleScreen";
-import Contact from "./pages/Contact/Contact";
+import Contact from "./pages/Contact/ContactScreen";
 import Formation from "./pages/Formation/Formation";
 import QuiSommesNous from "./pages/QuiSommesNous/QuiSommesNous";
 import InterventionEtAnimation from "./pages/InterventionEtAnimation/InterventionEtAnimation";
@@ -10,6 +10,7 @@ import AccompagnementAuPortageDeProjet from "./pages/AccompagnementAuPortageDePr
 import App from "./App";
 
 import { ArticleProvider } from "./context/ArticleContext";
+import { ContactProvider } from "./context/ContactContext";
 
 const route = createBrowserRouter([
   {
@@ -45,7 +46,9 @@ const route = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ArticleProvider>
-      <RouterProvider router={route} />
+      <ContactProvider>
+        <RouterProvider router={route} />
+      </ContactProvider>
     </ArticleProvider>
   </React.StrictMode>
 );
