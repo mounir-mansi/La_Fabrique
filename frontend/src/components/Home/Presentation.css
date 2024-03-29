@@ -1,0 +1,11 @@
+.presentation {
+  margin: 20px auto;
+  padding: 50px;
+}
+
+.presentation h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}

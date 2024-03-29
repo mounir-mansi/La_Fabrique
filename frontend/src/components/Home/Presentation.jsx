@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Presentation.css";
 
 function Presentation() {
   const [section, setSection] = useState({});
