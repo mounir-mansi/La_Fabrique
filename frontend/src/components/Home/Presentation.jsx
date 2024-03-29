@@ -24,7 +24,9 @@ function Presentation() {
   return (
     <div className="presentation">
       <h1>{section.title}</h1>
-      <p>{section.content}</p>
+      <p>
+        {section.content} <a href={section.route}>En savoir plus...</a>
+      </p>
     </div>
   );
 }

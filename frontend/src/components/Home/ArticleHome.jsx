@@ -26,7 +26,7 @@ function ArticleHome() {
   );
 
   return (
-    <div>
+    <div className="article-home">
       {filteredSections.map((section, index) => (
         <div
           key={section.id}
@@ -37,7 +37,9 @@ function ArticleHome() {
           </div>
           <div className="section__content">
             <h2>{section.title}</h2>
-            <p>{section.content}</p>
+            <p>
+              {section.content} <a href={section.route}>En savoir plus...</a>
+            </p>
           </div>
         </div>
       ))}
