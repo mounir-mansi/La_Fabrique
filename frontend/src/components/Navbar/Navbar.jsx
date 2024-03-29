@@ -67,11 +67,16 @@ function Navbar() {
       </ul>
       <div className="Language">
         <div className="Lang">
-          <a href="/">FR </a>
+          <a href="/" target="_blank">
+            FR{" "}
+          </a>
         </div>
         {/* <div style={{ margin: "0 0.5em" }}> | </div> */}
         <div className="Lang">
-          <a href="/"> EN</a>
+          <a href="/" target="_blank">
+            {" "}
+            EN
+          </a>
         </div>
       </div>
     </div>
