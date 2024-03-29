@@ -61,8 +61,8 @@ models.navbar.setDatabase(pool);
 const partnerManager = new PartnerManager();
 partnerManager.setDatabase(pool);
 
-const sectionManager = new SectionManager();
-sectionManager.setDatabase(pool);
+models.section = new SectionManager();
+models.section.setDatabase(pool);
 
 const teamManager = new TeamManager();
 teamManager.setDatabase(pool);
