@@ -25,9 +25,19 @@ function Hero({ id, logo }) {
 
     fetchData();
   }, [id]); // Effectue la requête à chaque changement de l'ID
+  const defaultImage = "https://i.ibb.co/yXRg0WQ/peakpx.jpg";
 
   return (
-    <div className="Hero">
+    <div
+      className="Hero"
+      style={{
+        backgroundImage: heroData
+          ? `url(${heroData.picture || defaultImage})`
+          : `url(${defaultImage})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
       <Navbar />{" "}
       {window.location.pathname === "/" && (
         <img className="LogoHome" src={logo} alt="Hero" />
