@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./ArticleHome.css";
 
 function ArticleHome() {
   const [sections, setSections] = useState([]);
@@ -26,11 +27,18 @@ function ArticleHome() {
 
   return (
     <div>
-      {filteredSections.map((section) => (
-        <div key={section.id}>
-          <img src={section.picture} className="img" alt="" />
-          <h2>{section.title}</h2>
-          <p>{section.content}</p>
+      {filteredSections.map((section, index) => (
+        <div
+          key={section.id}
+          className={index % 2 === 0 ? "article-even" : "article-odd"}
+        >
+          <div className="section__image">
+            <img src={section.picture} className="img" alt="" />
+          </div>
+          <div className="section__content">
+            <h2>{section.title}</h2>
+            <p>{section.content}</p>
+          </div>
         </div>
       ))}
     </div>
