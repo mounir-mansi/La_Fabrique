@@ -61,7 +61,13 @@ function Navbar() {
       <ul>
         {navbarItems.map((item) => (
           <li key={item.id_navbar}>
-            <a href={generatePath(item.id_navbar)}>{item.title.trim()} |</a>
+            <a
+              href={generatePath(item.id_navbar)}
+              target={item.id_navbar === 6 ? "_blank" : "_self"}
+              rel={item.id_navbar === 6 ? "noreferrer" : undefined}
+            >
+              {item.title.trim()} |
+            </a>
           </li>
         ))}
       </ul>
