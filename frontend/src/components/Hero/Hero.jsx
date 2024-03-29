@@ -1,6 +1,7 @@
 import "./Hero.css";
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import Navbar from "../Navbar/Navbar";
 
 function Hero({ id, logo }) {
   const [heroData, setHeroData] = useState(null);
@@ -27,7 +28,7 @@ function Hero({ id, logo }) {
 
   return (
     <div className="Hero">
-      {" "}
+      <Navbar />{" "}
       {window.location.pathname === "/" && (
         <img className="LogoHome" src={logo} alt="Hero" />
       )}
@@ -37,8 +38,8 @@ function Hero({ id, logo }) {
 }
 
 Hero.propTypes = {
-  id: PropTypes.number.isRequired, // Type de l'ID
-  logo: PropTypes.string.isRequired, // Type de l'image
+  id: PropTypes.number.isRequired,
+  logo: PropTypes.string.isRequired,
 };
 
 export default Hero;

@@ -1,6 +1,5 @@
 .Navbar {
-  height: 50px;
-  background-color: #333;
+  /* background-color: #333; */
   color: white;
   padding: 1.1rem;
   display: flex;
@@ -20,7 +19,7 @@
   margin-right: 1em;
 }
 
-.NavbarItems {
+ul {
   list-style-type: none;
   margin-right: auto;
   padding: 0;
@@ -30,115 +29,40 @@
   text-transform: uppercase;
 }
 
-.NavbarItems li {
+li {
   margin-right: 1em;
+  text-decoration: none;
 }
 
-.NavbarItems > li > a {
+ul > li > a {
   text-decoration: none;
   color: white;
 }
 
-.NavbarItems > li > a:hover {
+ul > li > a:hover {
   color: #63105b;
 }
+.Language {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
 
-a.active {
-  color: #63105b;
+.Lang {
+  margin-right: 15px; /* Ajouter un espacement entre les éléments de langue */
+  display: flex;
 }
 
 .Language {
-  display: flex;
-  justify-content: end;
+  margin-left: auto;
 }
 
-a.Lang {
-  text-decoration: none;
-  color: white;
-}
-
-a.Lang:hover {
+.Lang:hover {
   color: #63105b;
 }
 
-.NavbarItems > li,
-.Language,
-.Navbar > a > img:hover {
+ul > li,
+.Lang,
+img:hover {
   cursor: pointer;
 }
-
-.BurgerMenu {
-  display: none;
-  cursor: pointer;
-}
-
-/* Styles pour le menu burger */
-.Bar1,
-.Bar2,
-.Bar3 {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 5px 0;
-  transition: 0.4s;
-}
-
-.change .Bar1 {
-  transform: rotate(-45deg) translate(-5px, 5px);
-}
-
-.change .Bar2 {
-  opacity: 0;
-}
-
-.change .Bar3 {
-  transform: rotate(45deg) translate(-5px, -5px);
-}
-
-/* @media (max-width: 1090px) {
-  .Navbar > a > img {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  .NavbarItems {
-    display: none;
-  }
-
-  .BurgerMenu {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translate(-100%, 50%);
-  }
-
-  .NavbarItems.mobile {
-    background-color: rgb(0, 0, 0);
-    display: block;
-    position: fixed;
-    margin-top: 82px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    height: fit-content;
-    width: 50%; 
-    padding: 20px; 
-  }
-
-  .NavbarItems.mobile li {
-    margin-bottom: 15px; 
-  }
-
-  .NavbarItems.mobile a {
-    color: white; 
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: block; 
-  }
-
-  .NavbarItems.mobile a:hover {
-    color: #63105b; 
-  }
-} */

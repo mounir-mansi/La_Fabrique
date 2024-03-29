@@ -1,19 +1,54 @@
 .Hero {
   background-color: #333;
-  height: 45vh;
+  height: 500px;
   color: white;
-  padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .Hero > h1 {
   background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.Hero > .Navbar {
+  background-color: transparent;
+  color: white;
+  position: sticky;
+  height: 50px;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0 !important;
+}
+
+.Hero > .Navbar.scrolled {
+  background-color: black;
 }
 
 .LogoHome {
-  height: 14vw;
+  height: 250px;
   width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .Hero {
+    height: 200px;
+  }
+
+  .Hero > .LogoHome {
+    height: 125px;
+  }
 }
