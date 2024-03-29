@@ -1,0 +1,68 @@
+.Navbar {
+  /* background-color: #333; */
+  color: white;
+  padding: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  transition: background-color 0.3s ease;
+}
+
+.Navbar.scrolled {
+  background-color: black;
+}
+
+.Navbar > a > img {
+  height: 40px;
+  margin-right: 1em;
+}
+
+ul {
+  list-style-type: none;
+  margin-right: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+li {
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+ul > li > a {
+  text-decoration: none;
+  color: white;
+}
+
+ul > li > a:hover {
+  color: #63105b;
+}
+.Language {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+.Lang {
+  margin-right: 15px; /* Ajouter un espacement entre les éléments de langue */
+  display: flex;
+}
+
+.Language {
+  margin-left: auto;
+}
+
+.Lang:hover {
+  color: #63105b;
+}
+
+ul > li,
+.Lang,
+img:hover {
+  cursor: pointer;
+}
