@@ -22,11 +22,47 @@ app.use(
   })
 );
 
+app.use(cors());
+
+// app.use(cors());
+// app.use("/upload", express.static(path.join(__dirname, "../assets/upload")));
+
+// app.use(cors());
+
+app.use(cors());
+
+// app.use(cors());
+// app.use("/upload", express.static(path.join(__dirname, "../assets/upload")));
+
+// app.use(cors());
+
+// app.use(cors());
+// app.use("/upload", express.static(path.join(__dirname, "../assets/upload")));
+
+app.use(cors());
 // import and mount the API routes
 
-const router = require("./router");
+const ArticleRouter = require("./routers/ArticleRouter");
+const CarrousselRouter = require("./routers/CarrousselRouter");
+const ContactRouter = require("./routers/ContactRouter");
+const FooterRouter = require("./routers/FooterRouter");
+const HeroRouter = require("./routers/HeroRouter");
+const NavbarRouter = require("./routers/NavbarRouter");
+const PartnerRouter = require("./routers/PartnerRouter");
+const SectionRouter = require("./routers/SectionRouter");
+const TeamRouter = require("./routers/TeamRouter");
+const ThemeRouter = require("./routers/ThemeRouter");
 
-app.use(router);
+app.use(ArticleRouter);
+app.use(CarrousselRouter);
+app.use(ContactRouter);
+app.use(FooterRouter);
+app.use(HeroRouter);
+app.use(NavbarRouter);
+app.use(PartnerRouter);
+app.use(SectionRouter);
+app.use(TeamRouter);
+app.use(ThemeRouter);
 
 // serve the `backend/public` folder for public resources
 

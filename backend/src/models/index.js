@@ -29,13 +29,46 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-const ItemManager = require("./ItemManager");
+const ArticleManager = require("./Manager/ArticleManager");
+const CarrousselManager = require("./Manager/CarrousselManager");
+const ContactManager = require("./Manager/ContactManager");
+const FooterManager = require("./Manager/FooterManager");
+const HeroManager = require("./Manager/HeroManager");
+const NavbarManager = require("./Manager/NavbarManager");
+const PartnerManager = require("./Manager/PartnerManager");
+const SectionManager = require("./Manager/SectionManager");
+const TeamManager = require("./Manager/TeamManager");
+const ThemeManager = require("./Manager/ThemeManager");
 
-models.item = new ItemManager();
-models.item.setDatabase(pool);
+models.article = new ArticleManager();
+models.article.setDatabase(pool);
 
-// bonus: use a proxy to personalize error message,
-// when asking for a non existing model
+models.carroussel = new CarrousselManager();
+models.carroussel.setDatabase(pool);
+
+models.contact = new ContactManager();
+models.contact.setDatabase(pool);
+
+models.footer = new FooterManager();
+models.footer.setDatabase(pool);
+
+models.hero = new HeroManager();
+models.hero.setDatabase(pool);
+
+models.navbar = new NavbarManager();
+models.navbar.setDatabase(pool);
+
+const partnerManager = new PartnerManager();
+partnerManager.setDatabase(pool);
+
+const sectionManager = new SectionManager();
+sectionManager.setDatabase(pool);
+
+const teamManager = new TeamManager();
+teamManager.setDatabase(pool);
+
+const themeManager = new ThemeManager();
+themeManager.setDatabase(pool);
 
 const handler = {
   get(obj, prop) {
