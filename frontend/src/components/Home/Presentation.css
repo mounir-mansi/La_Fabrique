@@ -1,0 +1,25 @@
+.presentation {
+  max-width: 60%;
+  margin-bottom: 20px;
+  padding: 50px;
+}
+
+.presentation h1 {
+  color: #63105b;
+  font-size: 36px;
+  /* margin-bottom: 20px; */
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.presentation a {
+  color: #63105b;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 910px) {
+  .presentation {
+    max-width: 100%;
+    padding: 20px;
+  }
+}

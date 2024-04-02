@@ -1,6 +1,10 @@
 .Hero {
-  background-color: #333;
-  height: 500px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+  height: 550px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -41,6 +45,11 @@
 .LogoHome {
   height: 250px;
   width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 @media screen and (max-width: 768px) {

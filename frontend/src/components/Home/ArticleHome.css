@@ -1,0 +1,66 @@
+.article-even {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.article-odd {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.section__image {
+  width: 60rem;
+  height: 40rem;
+  overflow: hidden;
+}
+
+.section__content {
+  width: 50%;
+  padding: 0 20px;
+}
+
+.section__content > h2 {
+  color: #63105b;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section__content > p > a {
+  color: #63105b;
+  text-decoration: underline;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 910px) {
+  .section__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .section__content {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .article-home {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-even,
+  .article-odd {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
