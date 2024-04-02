@@ -61,6 +61,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"; // Importer useNavigate
 import { useArticle } from "../../context/ArticleContext";
 import ArticleNavigation from "./ArticleNavigation";
+import Navbar from "../Navbar/Navbar";
 import "./Article.css";
 
 function Article() {
@@ -97,27 +98,42 @@ function Article() {
     <div>
       {articleSpecify && (
         <div>
-          <h2>{articleSpecify.title}</h2>
-          <p>{articleSpecify.content}</p>
-          <a href={articleSpecify.link}>{articleSpecify.link}</a>
-          <br />
-          <br />
-          <div className="content-img">
+          <div className="Hero-article">
+            <Navbar />
             <img
-              className="picture-article"
-              src="../src/assets/img.png"
-              alt="rrr"
+              className="picture-hero-article"
+              src="../src/assets/articlehero.webp"
+              alt="article hero"
+            />
+            <img
+              className="LogoHome"
+              src="../src/assets/Logo/PNG/LOGO-LF-BLANC.png"
+              alt="Hero"
+            />
+            <h1>{articleSpecify.title}</h1>
+          </div>
+          <div className="container-article">
+            <p>{articleSpecify.content}</p>
+            <a href={articleSpecify.link}>{articleSpecify.link}</a>
+            <br />
+            <br />
+            <div className="content-img">
+              <img
+                className="picture-article"
+                src="../src/assets/img.png"
+                alt="article"
+              />
+            </div>
+            <p>Date : {formatDate(articleSpecify.date)}</p>
+            <ArticleNavigation
+              onPrevious={goToPreviousArticle}
+              previousTitle={articles[dataid - 2]?.title}
+              onNext={goToNextArticle}
+              nextTitle={articles[dataid]?.title}
+              hasPrevious={dataid > 1}
+              hasNext={dataid < articles.length}
             />
           </div>
-          <p>Date : {formatDate(articleSpecify.date)}</p>
-          <ArticleNavigation
-            onPrevious={goToPreviousArticle}
-            previousTitle={articles[dataid - 2]?.title}
-            onNext={goToNextArticle}
-            nextTitle={articles[dataid]?.title}
-            hasPrevious={dataid > 1}
-            hasNext={dataid < articles.length}
-          />
         </div>
       )}
     </div>
