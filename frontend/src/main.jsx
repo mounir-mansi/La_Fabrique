@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ArticleScreen from "./pages/Article/ArticleScreen";
 import Contact from "./pages/Contact/ContactScreen";
-import Formation from "./pages/Formation/Formation";
+import Formation from "./pages/NosFormation/NosFormation";
 import QuiSommesNous from "./pages/QuiSommesNous/QuiSommesNous";
 import InterventionEtAnimation from "./pages/InterventionEtAnimation/InterventionEtAnimation";
 import AccompagnementAuPortageDeProjet from "./pages/AccompagnementAuPortageDeProjet/AccompagnementAuPortageDeProjet";
@@ -11,6 +11,7 @@ import App from "./App";
 
 import { ArticleProvider } from "./context/ArticleContext";
 import { ContactProvider } from "./context/ContactContext";
+import { SectionProvider } from "./context/SectionContext";
 
 const route = createBrowserRouter([
   {
@@ -47,7 +48,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ArticleProvider>
       <ContactProvider>
-        <RouterProvider router={route} />
+        <SectionProvider>
+          <RouterProvider router={route} />
+        </SectionProvider>
       </ContactProvider>
     </ArticleProvider>
   </React.StrictMode>
