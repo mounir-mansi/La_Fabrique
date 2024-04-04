@@ -8,7 +8,7 @@ const ArticleController = require("../controllers/ArticleController");
 router.get("/article", ArticleController.getArticles);
 
 // Get last 9 articles
-router.get("/latestArticles", ArticleController.getLatestArticles);
+router.get("/article/last", ArticleController.getLast);
 
 // Get a specific article by ID
 router.get("/article/:id", ArticleController.getArticleById);

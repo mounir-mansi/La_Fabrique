@@ -14,7 +14,13 @@
   background-color: black;
 }
 
-.Navbar > a > img {
+.Navbar__content {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.Navbar > .Navbar__content > a > img {
   height: 40px;
   margin-right: 1em;
 }
@@ -42,6 +48,7 @@ ul > li > a {
 ul > li > a:hover {
   color: #63105b;
 }
+
 .Language {
   display: flex;
   justify-content: flex-end;
