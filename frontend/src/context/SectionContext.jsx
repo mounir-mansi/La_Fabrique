@@ -1,22 +1,23 @@
+// sectionContext.js
 import { createContext, useContext, useMemo, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { hostname } from "../HostnameConnect/Hostname";
 
-const ContactContext = createContext(null);
+const SectionContext = createContext(null);
 
-export function useContact() {
-  return useContext(ContactContext);
+export function useSection() {
+  return useContext(SectionContext);
 }
 
-export function ContactProvider({ children }) {
-  const [contacts, setContacts] = useState([]);
+export function SectionProvider({ children }) {
+  const [sections, setSections] = useState([]);
 
-  const getContacts = async () => {
+  const getSections = async () => {
     try {
-      const response = await fetch(`${hostname}/contact`);
+      const response = await fetch(`${hostname}/sections`); // Utilisez le chemin correct pour votre API
       if (response.ok) {
         const data = await response.json();
-        setContacts(data);
+        setSections(data);
       } else {
         console.error("Erreur lors de la requête:", response.statusText);
       }
@@ -26,16 +27,16 @@ export function ContactProvider({ children }) {
   };
 
   useEffect(() => {
-    getContacts();
+    getSections();
   }, []); // Utilisez une dépendance vide pour exécuter cette fonction une seule fois après le rendu initial
 
-  const value = useMemo(() => ({ contacts, getContacts }), [contacts]);
+  const value = useMemo(() => ({ sections, getSections }), [sections]);
 
   return (
-    <ContactContext.Provider value={value}>{children}</ContactContext.Provider>
+    <SectionContext.Provider value={value}>{children}</SectionContext.Provider>
   );
 }
 
-ContactProvider.propTypes = {
+SectionProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
