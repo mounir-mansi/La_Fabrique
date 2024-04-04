@@ -1,7 +1,6 @@
 .article-home > div {
   margin-bottom: 20px;
   padding: 25px;
-  background-color: pink;
 }
 
 .article-even {
@@ -25,7 +24,6 @@
 }
 
 .section__content {
-  background-color: aqua;
   width: 49%;
   margin: 1%;
   padding: 0 20px;
