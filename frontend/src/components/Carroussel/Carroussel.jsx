@@ -39,6 +39,7 @@ function Carroussel() {
     fetchArticles();
   }, []);
 
+  // Effet pour gérer le défilement automatique du carrousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -46,20 +47,33 @@ function Carroussel() {
       );
     }, 10000);
 
+    // Nettoyage de l'intervalle lors du démontage du composant
     return () => clearInterval(interval);
   }, [currentIndex, articles.length]);
 
+  // Gestionnaire d'événements pour le survol d'un élément
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
   };
 
+  // Gestionnaire d'événements pour la fin du survol d'un élément
   const handleMouseLeave = () => {
     setHoveredIndex(null);
   };
 
+  // Fonction pour raccourcir le contenu de l'article
+  const shortenContent = (content, maxLength) => {
+    if (content.length > maxLength) {
+      return `${content.substring(0, maxLength)}...`;
+    }
+    return content;
+  };
+
+  // Rendu du composant Carrousel
   return (
     <div className="carroussel">
       <div>
+        {/* Affichage du titre du carrousel */}
         {carroussel.map((item) => (
           <h2 key={item.id_carroussel}>
             <i>|</i> {item.title}
@@ -67,6 +81,7 @@ function Carroussel() {
         ))}
       </div>
       <div className="carroussel__content">
+        {/* Bouton précédent */}
         <button
           type="button"
           className="prev-button"
@@ -80,6 +95,7 @@ function Carroussel() {
         >
           &#10094;
         </button>
+        {/* Liste des articles du carrousel */}
         <ul>
           {articles
             .slice(currentIndex * 3, (currentIndex + 1) * 3)
@@ -90,17 +106,20 @@ function Carroussel() {
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="image-container">
+                  {/* Affichage de l'image de l'article */}
                   <img src={article.picture} alt="" />
+                  {/* Affichage du contenu de l'article au survol */}
                   {hoveredIndex === currentIndex * 3 + index && (
                     <div className="overlay">
                       <h3>{article.title}</h3>
-                      <p>{article.content}</p>
+                      <p>{shortenContent(article.content, 150)}</p>
                     </div>
                   )}
                 </div>
               </li>
             ))}
         </ul>
+        {/* Bouton suivant */}
         <button
           type="button"
           className="next-button"
@@ -115,6 +134,7 @@ function Carroussel() {
           &#10095;
         </button>
       </div>
+      {/* Indicateurs de pagination */}
       <div className="dots">
         {Array.from({ length: Math.ceil(articles.length / 3) }).map(
           (_, index) => (
