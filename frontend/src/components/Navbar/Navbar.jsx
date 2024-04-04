@@ -55,29 +55,31 @@ function Navbar() {
 
   return (
     <div className={`Navbar${isScrolled ? " scrolled" : ""}`}>
-      <a href="/">
-        <img src={Logo} alt="Logo La Fabrique" />
-      </a>
-      <ul>
-        {navbarItems.map((item) => (
-          <li key={item.id_navbar}>
-            <a
-              href={generatePath(item.id_navbar)}
-              target={item.id_navbar === 6 ? "_blank" : "_self"}
-              rel={item.id_navbar === 6 ? "noreferrer" : undefined}
-            >
-              {item.title.trim()} |
-            </a>
-          </li>
-        ))}
-      </ul>
-      <div className="Language">
-        <div className="Lang">
-          <a href="/">FR </a>
-        </div>
-        {/* <div style={{ margin: "0 0.5em" }}> | </div> */}
-        <div className="Lang">
-          <a href="/"> EN</a>
+      <div className="Navbar__content">
+        <a href="/">
+          <img src={Logo} alt="Logo La Fabrique" />
+        </a>
+        <ul>
+          {navbarItems.map((item) => (
+            <li key={item.id_navbar}>
+              <a
+                href={generatePath(item.id_navbar)}
+                target={item.id_navbar === 6 ? "_blank" : "_self"}
+                rel={item.id_navbar === 6 ? "noreferrer" : undefined}
+              >
+                {item.title.trim()} |
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="Language">
+          <div className="Lang">
+            <a href="/">FR </a>
+          </div>
+          {/* <div style={{ margin: "0 0.5em" }}> | </div> */}
+          <div className="Lang">
+            <a href="/"> EN</a>
+          </div>
         </div>
       </div>
     </div>

@@ -11,18 +11,22 @@ const getArticles = (req, res) => {
       res.sendStatus(500);
     });
 };
-
-const getLatestArticles = (req, res) => {
+const getLast = (req, res) => {
   models.article
-    .findLatest()
-    .then((articles) => {
-      res.send(articles);
+    .findLast()
+    .then(([rows]) => {
+      if (rows.length === 0) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows);
+      }
     })
     .catch((err) => {
       console.error(err);
       res.sendStatus(500);
     });
 };
+
 const getArticleById = (req, res) => {
   models.article
     .find(req.params.id)
@@ -85,7 +89,7 @@ const deleteArticle = (req, res) => {
 
 module.exports = {
   getArticles,
-  getLatestArticles,
+  getLast,
   getArticleById,
   addArticle,
   updateArticle,
