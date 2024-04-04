@@ -5,6 +5,7 @@ import "./Navbar.css";
 function Navbar() {
   const [navbarItems, setNavbarItems] = useState([]);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const fetchNavbarItems = async () => {
@@ -25,18 +26,15 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Vérifie la position de défilement verticale
       if (window.scrollY > 0) {
-        setIsScrolled(true); // Si le défilement est vers le bas, active la classe de défilement
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false); // Sinon, désactive la classe de défilement
+        setIsScrolled(false);
       }
     };
 
-    // Ajoute un écouteur d'événements pour gérer le défilement
     window.addEventListener("scroll", handleScroll);
 
-    // Nettoye l'écouteur d'événements lors du démontage du composant
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -53,19 +51,33 @@ function Navbar() {
 
   const generatePath = (id) => idToPathMap[id] || "/";
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className={`Navbar${isScrolled ? " scrolled" : ""}`}>
       <div className="Navbar__content">
         <a href="/">
           <img src={Logo} alt="Logo La Fabrique" />
         </a>
-        <ul>
+        <button
+          type="button"
+          className={`MenuIcon${isMenuOpen ? " open" : ""}`}
+          onClick={toggleMenu}
+        >
+          <div className="bar1" />
+          <div className="bar2" />
+          <div className="bar3" />
+        </button>
+        <ul className={`MenuItems${isMenuOpen ? " open" : ""}`}>
           {navbarItems.map((item) => (
             <li key={item.id_navbar}>
               <a
                 href={generatePath(item.id_navbar)}
                 target={item.id_navbar === 6 ? "_blank" : "_self"}
                 rel={item.id_navbar === 6 ? "noreferrer" : undefined}
+                onClick={toggleMenu}
               >
                 {item.title.trim()} |
               </a>
@@ -76,7 +88,6 @@ function Navbar() {
           <div className="Lang">
             <a href="/">FR </a>
           </div>
-          {/* <div style={{ margin: "0 0.5em" }}> | </div> */}
           <div className="Lang">
             <a href="/"> EN</a>
           </div>
