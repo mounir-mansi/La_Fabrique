@@ -1,0 +1,101 @@
+.footer {
+  background-color: black;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+}
+
+.footer_content {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding: 20px;
+}
+
+.footer_content > div {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.footer_content > div > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.footer_content > div > ul > li {
+  height: 100%;
+  width: 30%;
+  align-items: center;
+}
+
+.Footer__title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+.Footer__information,
+.Footer__contact_horaire {
+  text-transform: capitalize;
+}
+
+.Footer__contact_email,
+.Footer__contact_phone {
+  text-transform: lowercase;
+}
+
+.Footer__information,
+.Footer__contact_email,
+.Footer__contact_phone {
+  display: flex;
+  justify-content: center;
+  padding: 0 25% 0 25%;
+  text-align: justify;
+}
+
+.Footer__contact_horaire {
+  display: flex;
+  padding: 0 25% 0 25%;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer_copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer__logo img {
+  width: 80px;
+  height: auto;
+}
+
+.footer__socialmedia a {
+  margin-right: 10px;
+}
+
+.footer__socialmedia a:hover {
+  opacity: 0.8;
+}
+
+.footer__socialmedia a img {
+  width: 28px;
+  height: auto;
+}
+
+.footer__mentionslegales a {
+  color: #63105b;
+  text-decoration: underline;
+  font-size: 12px;
+}

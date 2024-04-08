@@ -12,6 +12,18 @@ const getFooter = (req, res) => {
     });
 };
 
+const getFooterContact = (req, res) => {
+  models.footer
+    .findFooterContact()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const getFooterbyId = (req, res) => {
   models.footer
     .find(req.params.id)
@@ -44,6 +56,7 @@ const updateFooter = (req, res) => {
 
 module.exports = {
   getFooter,
+  getFooterContact,
   getFooterbyId,
   updateFooter,
 };
