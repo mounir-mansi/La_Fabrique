@@ -1,5 +1,4 @@
 .Navbar {
-  /* background-color: #333; */
   color: white;
   padding: 1.1rem;
   display: flex;
@@ -11,17 +10,19 @@
 }
 
 .Navbar.scrolled {
+  height: fit-content;
   background-color: black;
 }
 
 .Navbar__content {
+  width: 100%;
   padding: 10px;
   display: flex;
   align-items: center;
 }
 
 .Navbar > .Navbar__content > a > img {
-  height: 40px;
+  height: 45px;
   margin-right: 1em;
 }
 
@@ -31,7 +32,8 @@ ul {
   padding: 0;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  justify-self: center;
+  font-size: 18px;
   text-transform: uppercase;
 }
 
@@ -53,15 +55,13 @@ ul > li > a:hover {
   display: flex;
   justify-content: flex-end;
   margin-right: 15px;
+  font-size: 18px;
+  margin-left: auto;
 }
 
 .Lang {
-  margin-right: 15px; /* Ajouter un espacement entre les éléments de langue */
+  margin-right: 15px;
   display: flex;
-}
-
-.Language {
-  margin-left: auto;
 }
 
 .Lang:hover {
@@ -72,4 +72,109 @@ ul > li,
 .Lang,
 img:hover {
   cursor: pointer;
+}
+
+.MenuIcon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.MenuIcon.open .bar1 {
+  transform: rotate(-125deg) translate(-10px, -6px);
+}
+
+.MenuIcon.open .bar2 {
+  opacity: 0;
+}
+
+.MenuIcon.open .bar3 {
+  transform: rotate(125deg) translate(-10px, 6px);
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.MenuItems {
+  list-style-type: none;
+  margin-right: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.MenuItems.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: black;
+  width: 100%;
+}
+
+.MenuItems.open li {
+  margin-right: 0;
+  text-align: center;
+}
+
+.MenuItems.open a {
+  display: block;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1475px) {
+  .Navbar,
+  .Navbar.scrolled {
+    background-color: black;
+  }
+
+  .Navbar__content {
+    flex-direction: column;
+  }
+
+  .Navbar > .Navbar__content > a > img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 2vw;
+    left: 10vw;
+  }
+
+  .Navbar__content > button {
+    background-color: transparent;
+    border: none;
+  }
+
+  .MenuIcon {
+    display: flex;
+    position: absolute;
+    top: 2vw;
+    right: 10vw;
+  }
+
+  .MenuItems {
+    display: none;
+  }
+
+  .Language {
+    position: absolute;
+    top: 1vw;
+    right: 20vw;
+  }
+
+  .Lang > a {
+    font-size: 18px;
+  }
 }
