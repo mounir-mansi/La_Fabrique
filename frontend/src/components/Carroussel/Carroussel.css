@@ -1,4 +1,6 @@
 .carroussel {
+  padding: 20px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,11 +9,12 @@
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 1em;
 }
-p {
+
+.p_carroussel {
   font-size: 20px;
-  text-transform: capitalize;
+  text-transform: lowercase;
 }
 
 .carroussel__content ul {
@@ -95,6 +98,39 @@ p {
   transition: background-color 0.3s ease;
 }
 
+.dot:hover {
+  cursor: pointer;
+}
+
 .dot.active {
   background-color: #63105b;
+}
+
+.carroussel__title {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #63105b;
+}
+
+@media screen and (max-width: 1200px) {
+  .carroussel__content {
+    padding: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  .image-container {
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    overflow: hidden;
+  }
+
+  .prev-button,
+  .next-button {
+    display: none;
+  }
 }

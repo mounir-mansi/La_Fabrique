@@ -75,7 +75,7 @@ function Carroussel() {
       <div>
         {/* Affichage du titre du carrousel */}
         {carroussel.map((item) => (
-          <h2 key={item.id_carroussel}>
+          <h2 className="carroussel__title" key={item.id_carroussel}>
             <i>|</i> {item.title}
           </h2>
         ))}
@@ -112,7 +112,9 @@ function Carroussel() {
                   {hoveredIndex === currentIndex * 3 + index && (
                     <div className="overlay">
                       <h3>{article.title}</h3>
-                      <p>{shortenContent(article.content, 150)}</p>
+                      <p className="p_carroussel">
+                        {shortenContent(article.content, 150)}
+                      </p>
                     </div>
                   )}
                 </div>
