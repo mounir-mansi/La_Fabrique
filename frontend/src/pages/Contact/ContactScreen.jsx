@@ -2,6 +2,7 @@ import React from "react";
 import "./ContactScreen.css";
 import ContactInfo from "../../components/Contact/ContactInfo";
 import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer/Footer";
 
 function Contact() {
   return (
@@ -10,6 +11,7 @@ function Contact() {
       <div className="screen">
         <ContactInfo />
       </div>
+      <Footer />
     </div>
   );
 }
