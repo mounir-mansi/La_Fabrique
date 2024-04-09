@@ -58,6 +58,7 @@
   }
 
   .Hero > .LogoHome {
-    height: 125px;
+    height: 100px;
+    margin-top: 2.5rem;
   }
 }

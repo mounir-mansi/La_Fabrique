@@ -99,3 +99,18 @@
   text-decoration: underline;
   font-size: 12px;
 }
+
+@media screen and (max-width: 1200px) {
+  .footer_content > div > ul {
+    flex-direction: column;
+  }
+
+  .footer_content > div > ul > li {
+    width: 100%;
+  }
+
+  .Footer__information,
+  .Footer__contact_phone {
+    margin-bottom: 25px;
+  }
+}

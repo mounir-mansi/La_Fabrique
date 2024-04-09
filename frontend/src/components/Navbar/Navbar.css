@@ -134,9 +134,8 @@ img:hover {
 }
 
 @media screen and (max-width: 1475px) {
-  .Navbar,
-  .Navbar.scrolled {
-    background-color: black;
+  .Navbar {
+    background-color: black !important;
   }
 
   .Navbar__content {
