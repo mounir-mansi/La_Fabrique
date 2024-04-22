@@ -42,14 +42,14 @@ function Hero({ id, logo }) {
       {window.location.pathname === "/" && (
         <img className="LogoHome" src={logo} alt="Hero" />
       )}
-      {heroData && <h1>{heroData.title}</h1>}
     </div>
   );
 }
 
 Hero.propTypes = {
   id: PropTypes.number.isRequired,
-  logo: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  logo: PropTypes.string,
 };
 
 export default Hero;

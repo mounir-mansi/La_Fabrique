@@ -2,9 +2,17 @@
     width: 80vw;
     margin: auto;
   }
+
+  .formation h1{
+    text-align: center;
+  }
+  .accompagnement h1{
+    text-align: center;
+  }
   
   .formation h2,
   .formation h3,
+  .formation h1,
   .divider {
     color: #63105b;
   }

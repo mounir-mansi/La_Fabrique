@@ -3,8 +3,13 @@
   margin: auto;
 }
 
+.accompagnement h1{
+  text-align: center;
+}
+
 .accompagnement h2,
 .accompagnement h3,
+.accompagnement h1,
 .divider {
   color: #63105b;
 }

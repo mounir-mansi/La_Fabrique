@@ -7,13 +7,14 @@ import Formation from "./pages/NosFormation/NosFormation";
 import QuiSommesNous from "./pages/QuiSommesNous/QuiSommesNous";
 import InterventionEtAnimation from "./pages/InterventionEtAnimation/InterventionEtAnimation";
 import AccompagnementAuPortageDeProjet from "./pages/AccompagnementAuPortageDeProjet/AccompagnementAuPortageDeProjet";
-import Footer from "./components/Footer/Footer/Footer";
-import Newsletter from "./components/Footer/Newsletter/Newsletter";
+// import Footer from "./components/Footer/Footer/Footer";
+// import Newsletter from "./components/Footer/Newsletter/Newsletter";
 import App from "./App";
 
 import { ArticleProvider } from "./context/ArticleContext";
 import { ContactProvider } from "./context/ContactContext";
 import { SectionProvider } from "./context/SectionContext";
+import { TeamProvider } from "./context/QsnContext";
 
 const route = createBrowserRouter([
   {
@@ -51,9 +52,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ArticleProvider>
       <ContactProvider>
         <SectionProvider>
-          <RouterProvider router={route} />
-          <Newsletter />
-          <Footer />
+          {/* <Footer>
+            <Newsletter> */}
+          <TeamProvider>
+            <RouterProvider router={route} />
+          </TeamProvider>
+          {/* </Newsletter>
+          </Footer> */}
         </SectionProvider>
       </ContactProvider>
     </ArticleProvider>
