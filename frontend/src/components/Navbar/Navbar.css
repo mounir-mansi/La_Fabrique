@@ -56,14 +56,16 @@ ul > li > a:hover {
   display: flex;
   justify-content: flex-end;
   margin-right: 15px;
-  font-size: 1em;
   margin-left: auto;
 }
 
 .Lang {
   margin-right: 15px;
-  font-size: 1em;
   display: flex;
+}
+
+.Lang > a {
+  font-size: 1em;
 }
 
 .Lang:hover {
