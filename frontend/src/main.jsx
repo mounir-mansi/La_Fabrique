@@ -8,6 +8,7 @@ import QuiSommesNous from "./pages/QuiSommesNous/QuiSommesNous";
 import InterventionEtAnimation from "./pages/InterventionEtAnimation/InterventionEtAnimation";
 import AccompagnementAuPortageDeProjet from "./pages/AccompagnementAuPortageDeProjet/AccompagnementAuPortageDeProjet";
 import App from "./App";
+import Footer from "./components/Footer/Footer/Footer";
 
 import { ArticleProvider } from "./context/ArticleContext";
 import { ContactProvider } from "./context/ContactContext";
@@ -50,6 +51,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ContactProvider>
         <SectionProvider>
           <RouterProvider router={route} />
+          <Footer />
         </SectionProvider>
       </ContactProvider>
     </ArticleProvider>
