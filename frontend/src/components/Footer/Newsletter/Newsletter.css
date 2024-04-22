@@ -16,8 +16,9 @@
 
 .newsletter__title {
   margin-left: 5px;
-  margin-bottom: 2em;
+  margin-bottom: 1.2em;
   text-transform: semi-bold;
+  font-size: 18px;
 }
 
 .newsletter__form {
