@@ -3,6 +3,8 @@ import "./QuiSommesNous.css";
 import Hero from "../../components/Hero/Hero";
 import Qsn from "../../components/Qsn/Qsn";
 import Partenere from "../../components/Partenere/Partenere";
+import Footer from "../../components/Footer/Footer/Footer";
+import Newsletter from "../../components/Footer/Newsletter/Newsletter";
 
 function QuiSommesNous() {
   return (
@@ -10,6 +12,8 @@ function QuiSommesNous() {
       <Hero id={3} />
       <Qsn id={1} />
       <Partenere />
+      <Newsletter />
+      <Footer />
     </div>
   );
 }
