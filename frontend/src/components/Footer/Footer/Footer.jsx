@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Footer.css";
-import Newsletter from "../Newsletter/Newsletter";
 import Logo from "../../../assets/Logo/LOGO-LF-VIOLET-TXT (1).png";
 import Fb from "../../../assets/Rs/facebook.png";
 import Insta from "../../../assets/Rs/instagram.png";
@@ -18,7 +17,6 @@ function Footer() {
           throw new Error("Failed to fetch footer data");
         }
         const data = await response.json();
-        console.info("Footer data as JSON:", JSON.stringify(data));
         setFooterData(data);
       } catch (error) {
         console.error("Error fetching footer data:", error);
@@ -36,7 +34,6 @@ function Footer() {
           throw new Error("Failed to fetch footer contact data");
         }
         const data = await response.json();
-        console.info("Footer contact data as JSON:", JSON.stringify(data));
         setFooterDataContact(data);
       } catch (error) {
         console.error("Error fetching footer contact data:", error);
@@ -45,12 +42,8 @@ function Footer() {
     fetchDataContact();
   }, []);
 
-  console.info("footerData:", footerData);
-  console.info("footerDataContact:", footerDataContact);
-
   return (
     <div className="footer">
-      <Newsletter />
       <div className="footer_content">
         <div>
           <ul>

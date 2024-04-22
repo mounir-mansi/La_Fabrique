@@ -13,13 +13,14 @@
 }
 
 .Hero > h1 {
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   text-align: center;
   text-transform: uppercase;
   padding: 1rem;
   position: absolute;
-  bottom: 0;
+  bottom: 0; */
+  display: none;
 }
 
 .Hero > .Navbar {
@@ -58,6 +59,7 @@
   }
 
   .Hero > .LogoHome {
-    height: 125px;
+    height: 100px;
+    margin-top: 2.5rem;
   }
 }

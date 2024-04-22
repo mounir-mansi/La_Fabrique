@@ -2,14 +2,14 @@ import React from "react";
 import "./ContactScreen.css";
 import ContactInfo from "../../components/Contact/ContactInfo";
 import Navbar from "../../components/Navbar/Navbar";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 function Contact() {
   return (
-    <div>
+    <div className="ContactScreen">
       <Navbar />
-      <div className="screen">
-        <ContactInfo />
-      </div>
+      <ContactInfo />
+      <ContactForm />
     </div>
   );
 }
