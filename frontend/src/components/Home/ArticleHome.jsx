@@ -27,10 +27,10 @@ function ArticleHome() {
 
   return (
     <div className="article-home">
-      {filteredSections.map((section, index) => (
+      {filteredSections.map((section, x) => (
         <div
           key={section.id}
-          className={index % 2 === 0 ? "article-even" : "article-odd"}
+          className={x % 2 === 0 ? "article-even" : "article-odd"}
         >
           <div className="section__image">
             <img src={section.picture} className="img" alt="" />
@@ -42,20 +42,20 @@ function ArticleHome() {
                 {section.content
                   .substring(0, 700)
                   .split("\n")
-                  .map((paragraph, index) => {
+                  .map((paragraph, y) => {
                     // N'afficher que les trois premiers paragraphes
-                    if (index >= 1) return null;
+                    if (y >= 1) return null;
 
                     return (
-                      <p key={index}>
+                      <p key={section.id_section}>
                         {/* Étape 3: Mettre en gras ce qu'il faut mettre en gras */}
                         {paragraph.split("**").map((text, i) =>
                           i % 2 === 0 ? (
                             // Texte normal
-                            <span key={i}>{text}</span>
+                            <span key={section.id_section}>{text}</span>
                           ) : (
                             // Texte en gras
-                            <strong key={i}>{text}</strong>
+                            <strong key={section.id_section}>{text}</strong>
                           )
                         )}
                       </p>

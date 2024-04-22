@@ -118,6 +118,7 @@ function Formation({ id }) {
 
   return (
     <div className="formation">
+      <h1>{sectionSpecify.title}</h1>
       {sectionSpecify.content.split("\n").map((paragraph) => (
         <p key={sectionSpecify.id_section}>
           {/* Mettre en gras les caractères spécifiques */}

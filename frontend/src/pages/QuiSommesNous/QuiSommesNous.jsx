@@ -8,7 +8,7 @@ function QuiSommesNous() {
   return (
     <div>
       <Hero id={3} />
-      <Qsn />
+      <Qsn id={1} />
       <Partenere />
     </div>
   );

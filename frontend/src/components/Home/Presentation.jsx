@@ -29,20 +29,20 @@ function Presentation() {
           {section.content
             .substring(0, 1000)
             .split("\n")
-            .map((paragraph, index) => {
+            .map((paragraph, z) => {
               // N'afficher que les trois premiers paragraphes
-              if (index >= 4) return null;
+              if (z >= 4) return null;
 
               return (
-                <p key={index}>
+                <p key={section.id_section}>
                   {/* Étape 3: Mettre en gras ce qu'il faut mettre en gras */}
                   {paragraph.split("**").map((text, i) =>
                     i % 2 === 0 ? (
                       // Texte normal
-                      <span key={i}>{text}</span>
+                      <span key={section.id_section}>{text}</span>
                     ) : (
                       // Texte en gras
-                      <strong key={i}>{text}</strong>
+                      <strong key={section.id_section}>{text}</strong>
                     )
                   )}
                 </p>
