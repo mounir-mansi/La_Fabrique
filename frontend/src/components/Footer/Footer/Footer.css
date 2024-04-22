@@ -39,18 +39,20 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
-
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
 .Footer__information,
 .Footer__contact_horaire {
   text-transform: capitalize;
+  font-size: 15px;
 }
 
 .Footer__contact_email,
 .Footer__contact_phone {
   text-transform: lowercase;
+  font-size: 15px;
 }
 
 .Footer__information,
@@ -59,7 +61,7 @@
   display: flex;
   justify-content: center;
   padding: 0 25% 0 25%;
-  text-align: justify;
+  text-align: center;
 }
 
 .Footer__contact_horaire {
@@ -98,4 +100,19 @@
   color: #63105b;
   text-decoration: underline;
   font-size: 12px;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer_content > div > ul {
+    flex-direction: column;
+  }
+
+  .footer_content > div > ul > li {
+    width: 100%;
+  }
+
+  .Footer__information,
+  .Footer__contact_phone {
+    margin-bottom: 25px;
+  }
 }

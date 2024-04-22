@@ -5,10 +5,12 @@ import Formation from "../../components/Formation/formation";
 
 function NosFormation() {
   return (
-    <>
-      <Hero id={5} />
-      <Formation id={2} />
-    </>
+    <div>
+      <div className="Formation__content">
+        <Hero id={5} />
+        <Formation id={2} />
+      </div>
+    </div>
   );
 }
 
