@@ -49,7 +49,7 @@ function Hero({ id, logo }) {
 
 Hero.propTypes = {
   id: PropTypes.number.isRequired,
-  logo: PropTypes.string.isRequired,
+  logo: PropTypes.string,
 };
 
 export default Hero;

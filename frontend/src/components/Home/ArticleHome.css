@@ -54,6 +54,11 @@
   object-fit: cover;
 }
 
+.section__content a {
+  color: #63105b;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 1200px) {
   .section__content {
     width: 100%;

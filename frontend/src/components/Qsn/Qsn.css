@@ -1,0 +1,156 @@
+.about-us {
+    width: 80vw;
+    margin: auto;
+  }
+.section-title h1{
+  text-align: center;
+  color: #63105b;
+}
+
+.team-title{
+  display: flex;
+  align-items: center;
+}
+
+.about-us h2{
+  white-space: nowrap;
+  color: #63105b;
+}
+
+.about-us h3{
+  white-space: nowrap;
+  color: #63105b;
+}
+
+
+.member-image{
+    width: auto;
+    max-height: 400px;
+}
+
+.member-details h3{
+  font-size:x-large;
+  text-align: center;
+}
+.description p{
+  font-size: large;
+}
+
+.member-details span{
+  font-size:large;
+}
+
+.member-details p{
+  font-size: large;
+}
+
+  
+  /* CSS pour les éléments impairs */
+.team-member.odd {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 2em;
+  }
+  
+  .team-member.odd .member-image {
+    margin-left: 2em; /* Espace entre l'image et le texte */
+    float: right;
+    margin-bottom: 2em;
+
+  }
+  
+  .team-member.odd .member-details {
+    text-align: justify; /* Alignement du texte à droite */
+  }
+  
+  /* CSS pour les éléments pairs */
+  .team-member.even {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2em;
+  }
+  
+  .team-member.even .member-image {
+    margin-right: 2em; /* Espace entre l'image et le texte */
+    float: left;
+    margin-bottom: 2em;
+  }
+  
+  .team-member.even .member-details {
+    text-align: justify; /* Alignement du texte à gauche */
+  }
+  
+
+  .contribution {
+    text-align: center;
+    padding-bottom: 2em;
+
+  }
+  .contribution-title{
+    padding: 2em;
+  }
+  
+  .contribution h2, .contribution h3 {
+    text-align: center;
+  }
+
+  .contribution h2{
+    font-size: xx-large;
+    margin: 0;
+  }
+  .contribution h3{
+    font-size: x-large;
+    margin: 0;
+  }
+  
+  .contribution p {
+    text-align: justify;
+    margin: 0 auto;
+    font-size: large;
+    padding-bottom: 1em;
+
+  }
+
+  .contribution button{
+    padding: 1em 2em 1em 2em;
+    background-color: #63105b;
+    color: white;
+    font-size: large;
+    border-radius: 25px;
+  }
+  
+  .card-partenere {
+    display: grid; /* Utilisation de CSS Grid */
+    grid-template-columns: repeat(4, 1fr); /* Quatre colonnes de largeur égale */
+    gap: 10px; /* Espacement entre les images */
+  }
+  
+  .picture-partenere {
+    width: 100%; /* Pour que les images remplissent la largeur de leur conteneur */
+    height: auto; /* Pour maintenir le ratio de l'image */
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .member-image{
+      width: auto;
+      max-height: 350px;
+  }
+  }
+
+  @media screen and (max-width: 980px) {
+    .member-image{
+      width: auto;
+      max-height: 300px;
+  }
+  }
+
+  @media screen and (max-width: 760px) {
+    .member-image{
+      width: auto;
+      max-height: 250px;
+  }
+  .team-members{
+    flex-direction: column;
+  }
+  }
+  

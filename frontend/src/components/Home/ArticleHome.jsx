@@ -37,9 +37,33 @@ function ArticleHome() {
           </div>
           <div className="section__content">
             <h2>{section.title}</h2>
-            <p>
-              {section.content} <a href={section.route}>En savoir plus...</a>
-            </p>
+            {section.content && (
+              <>
+                {section.content
+                  .substring(0, 700)
+                  .split("\n")
+                  .map((paragraph, index) => {
+                    // N'afficher que les trois premiers paragraphes
+                    if (index >= 1) return null;
+
+                    return (
+                      <p key={index}>
+                        {/* Étape 3: Mettre en gras ce qu'il faut mettre en gras */}
+                        {paragraph.split("**").map((text, i) =>
+                          i % 2 === 0 ? (
+                            // Texte normal
+                            <span key={i}>{text}</span>
+                          ) : (
+                            // Texte en gras
+                            <strong key={i}>{text}</strong>
+                          )
+                        )}
+                      </p>
+                    );
+                  })}
+                <a href={section.route}>En savoir plus...</a>
+              </>
+            )}
           </div>
         </div>
       ))}

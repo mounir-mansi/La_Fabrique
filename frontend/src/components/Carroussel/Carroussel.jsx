@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Carroussel.css";
 
 function Carroussel() {
@@ -105,19 +106,21 @@ function Carroussel() {
                 onMouseEnter={() => handleMouseEnter(currentIndex * 3 + index)}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="image-container">
-                  {/* Affichage de l'image de l'article */}
-                  <img src={article.picture} alt="" />
-                  {/* Affichage du contenu de l'article au survol */}
-                  {hoveredIndex === currentIndex * 3 + index && (
-                    <div className="overlay">
-                      <h3>{article.title}</h3>
-                      <p className="p_carroussel">
-                        {shortenContent(article.content, 150)}
-                      </p>
-                    </div>
-                  )}
-                </div>
+                <Link to={`/article/${article.id_article}`}>
+                  <div className="image-container">
+                    {/* Affichage de l'image de l'article */}
+                    <img src={article.picture} alt="" />
+                    {/* Affichage du contenu de l'article au survol */}
+                    {hoveredIndex === currentIndex * 3 + index && (
+                      <div className="overlay">
+                        <h3>{article.title}</h3>
+                        <p className="p_carroussel">
+                          {shortenContent(article.content, 150)}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </Link>
               </li>
             ))}
         </ul>

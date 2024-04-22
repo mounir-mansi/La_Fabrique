@@ -58,17 +58,17 @@ models.hero.setDatabase(pool);
 models.navbar = new NavbarManager();
 models.navbar.setDatabase(pool);
 
-const partnerManager = new PartnerManager();
-partnerManager.setDatabase(pool);
+models.partnerManager = new PartnerManager();
+models.partnerManager.setDatabase(pool);
 
 models.section = new SectionManager();
 models.section.setDatabase(pool);
 
-const teamManager = new TeamManager();
-teamManager.setDatabase(pool);
+models.team = new TeamManager();
+models.team.setDatabase(pool);
 
-const themeManager = new ThemeManager();
-themeManager.setDatabase(pool);
+models.themeManager = new ThemeManager();
+models.themeManager.setDatabase(pool);
 
 const handler = {
   get(obj, prop) {

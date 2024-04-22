@@ -12,6 +12,7 @@ import App from "./App";
 import { ArticleProvider } from "./context/ArticleContext";
 import { ContactProvider } from "./context/ContactContext";
 import { SectionProvider } from "./context/SectionContext";
+import { TeamProvider } from "./context/QsnContext";
 
 const route = createBrowserRouter([
   {
@@ -49,7 +50,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ArticleProvider>
       <ContactProvider>
         <SectionProvider>
-          <RouterProvider router={route} />
+          <TeamProvider>
+            <RouterProvider router={route} />
+          </TeamProvider>
         </SectionProvider>
       </ContactProvider>
     </ArticleProvider>
