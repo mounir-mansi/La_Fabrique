@@ -2,9 +2,14 @@
     width: 80vw;
     margin: auto;
   }
+
+  .intervention h1{
+    text-align: center;
+  }
   
   .intervention h2,
   .intervention h3,
+  .intervention h1,
   .divider {
     color: #63105b;
   }

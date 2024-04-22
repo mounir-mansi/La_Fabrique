@@ -24,9 +24,33 @@ function Presentation() {
   return (
     <div className="presentation">
       <h1>{section.title}</h1>
-      <p>
-        {section.content} <a href={section.route}>En savoir plus...</a>
-      </p>
+      {section.content && (
+        <>
+          {section.content
+            .substring(0, 1000)
+            .split("\n")
+            .map((paragraph, z) => {
+              // N'afficher que les trois premiers paragraphes
+              if (z >= 4) return null;
+
+              return (
+                <p key={section.id_section}>
+                  {/* Étape 3: Mettre en gras ce qu'il faut mettre en gras */}
+                  {paragraph.split("**").map((text, i) =>
+                    i % 2 === 0 ? (
+                      // Texte normal
+                      <span key={section.id_section}>{text}</span>
+                    ) : (
+                      // Texte en gras
+                      <strong key={section.id_section}>{text}</strong>
+                    )
+                  )}
+                </p>
+              );
+            })}
+          <a href={section.route}>En savoir plus...</a>
+        </>
+      )}
     </div>
   );
 }
