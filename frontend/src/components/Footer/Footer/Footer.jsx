@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Footer.css";
-import Newsletter from "../Newsletter/Newsletter";
 import Logo from "../../../assets/Logo/LOGO-LF-VIOLET-TXT (1).png";
 import Fb from "../../../assets/Rs/facebook.png";
 import Insta from "../../../assets/Rs/instagram.png";
@@ -45,7 +44,6 @@ function Footer() {
 
   return (
     <div className="footer">
-      <Newsletter />
       <div className="footer_content">
         <div>
           <ul>

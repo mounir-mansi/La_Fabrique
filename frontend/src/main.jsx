@@ -7,6 +7,8 @@ import Formation from "./pages/NosFormation/NosFormation";
 import QuiSommesNous from "./pages/QuiSommesNous/QuiSommesNous";
 import InterventionEtAnimation from "./pages/InterventionEtAnimation/InterventionEtAnimation";
 import AccompagnementAuPortageDeProjet from "./pages/AccompagnementAuPortageDeProjet/AccompagnementAuPortageDeProjet";
+import Footer from "./components/Footer/Footer/Footer";
+import Newsletter from "./components/Footer/Newsletter/Newsletter";
 import App from "./App";
 
 import { ArticleProvider } from "./context/ArticleContext";
@@ -50,6 +52,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ContactProvider>
         <SectionProvider>
           <RouterProvider router={route} />
+          <Newsletter />
+          <Footer />
         </SectionProvider>
       </ContactProvider>
     </ArticleProvider>
