@@ -138,11 +138,15 @@ img:hover {
 
 .Navbar ul > li:not(:last-child) > a::after {
   content: "|";
-  margin-left: 0.5em; /* Ajoute une marge à gauche pour séparer les éléments */
+  margin-left: 0.5em;
 }
 
 @media screen and (max-width: 1475px) {
-  ul > li {
+  .Navbar ul > li > a::after {
+    display: none;
+  }
+
+  .Navbar__content > ul > li {
     width: 100vw;
   }
 
@@ -171,10 +175,6 @@ img:hover {
 
   .MenuItems.open li:last-child > a {
     border-bottom: none;
-  }
-
-  ul > li > a::after {
-    content: none;
   }
 
   .Navbar {
