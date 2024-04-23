@@ -5,7 +5,6 @@
     rgba(0, 0, 0, 0.5)
   );
   height: 34.38em;
-  width: 100vw;
   color: white;
   display: flex;
   flex-direction: column;
@@ -49,7 +48,7 @@
 
 @media screen and (max-width: 768px) {
   .Hero {
-    height: 200px;
+    height: 22em;
   }
 
   .Hero > .LogoHome {
