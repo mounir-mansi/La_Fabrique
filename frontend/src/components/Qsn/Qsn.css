@@ -34,21 +34,27 @@
 }
 
 .member-details h3 {
-  font-size: x-large;
+  font-size: 2em;
   text-align: center;
 }
+
 .description p {
-  font-size: large;
+  font-size: 1.2em;
 }
 
 .member-details span {
-  font-size: large;
+  font-size: 1.2em;
 }
 
 .member-details p {
-  font-size: large;
+  font-size: 1.2em;
 }
 
+.team-members strong {
+  font-family: "Title";
+  text-transform: uppercase;
+  font-size: 1.25em;
+}
 /* CSS pour les éléments impairs */
 .team-member.odd {
   display: flex;

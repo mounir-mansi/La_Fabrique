@@ -22,3 +22,8 @@ h4,
   font-family: "Title";
   text-transform: uppercase;
 }
+
+.navigation > .next > button > p,
+.navigation > .previous > button > p {
+  font-size: 0.9em;
+}
