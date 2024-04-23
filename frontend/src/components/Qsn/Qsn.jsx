@@ -148,7 +148,11 @@ function AboutUs({ id }) {
           Contribuez à notre cause en faisant un don dès aujourd'hui. Ensemble,
           faisons naître de nouveaux projets passionnants.
         </p>
-        <a href="https://www.helloasso.com/associations/la-fabrique-13/adhesions/adhesion">
+        <a
+          href="https://www.helloasso.com/associations/la-fabrique-13/adhesions/adhesion"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button type="button">Adhérer</button>
         </a>{" "}
       </div>

@@ -24,14 +24,14 @@
   padding-top: 20 px;
   padding-bottom: 20px;
   color: #63105b; /* Couleur du titre en violet */
-  font-size: 30px; /* Taille de la police du titre */
+  font-size: 2em; /* Taille de la police du titre */
   text-transform: uppercase;
   font-weight: bold;
 }
 
 .contact-info p,
 .contact-info__details__item span {
-  font-size: 24px; /* Taille de la police pour la description, le téléphone, l'e-mail et les horaires */
+  font-size: 1.25em; /* Taille de la police pour la description, le téléphone, l'e-mail et les horaires */
 }
 
 .contact-info__details__item {

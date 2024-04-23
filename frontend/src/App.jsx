@@ -1,4 +1,5 @@
 import Home from "./pages/Home/Home";
+import "./fonts/arial_narrow_7.ttf";
 
 import "./App.css";
 
