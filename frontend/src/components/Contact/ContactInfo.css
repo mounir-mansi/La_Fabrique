@@ -116,10 +116,6 @@
   .contact-info__image {
     padding: 0;
   }
-  .img {
-    max-height: 30vw;
-    max-width: 100%;
-  }
   .contact-info__details {
     padding: 1em;
   }
