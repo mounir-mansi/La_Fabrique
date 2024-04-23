@@ -22,7 +22,7 @@ function ArticleHome() {
 
   // Filtrer les sections à partir de l'ID 2
   const filteredSections = sections.filter(
-    (section) => section.id_section >= 2
+    (section) => section.id_section <= 3
   );
 
   return (

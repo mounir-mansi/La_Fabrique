@@ -9,7 +9,7 @@ function InterventionEtAnimation() {
   return (
     <div>
       <Hero id={4} />
-      <Intervention id={1} />
+      <Intervention id={0} />
       <Newsletter />
       <Footer />
     </div>

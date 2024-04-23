@@ -53,10 +53,14 @@
 // export default AboutUs;
 
 import React from "react";
+import PropTypes from "prop-types";
 import "./Qsn.css";
 import { useTeam } from "../../context/QsnContext"; // Importez le contexte de l'équipe
+import { useSection } from "../../context/SectionContext";
 
-function AboutUs() {
+function AboutUs({ id }) {
+  const sections = useSection();
+  const sectionSpecify = sections.sections[id];
   const { teamMembers } = useTeam();
   console.info("team", teamMembers);
 
@@ -67,49 +71,33 @@ function AboutUs() {
   return (
     <div className="about-us">
       <div className="section-title">
-        <h1>QUI SOMMES-NOUS ?</h1>
+        <h1>{sectionSpecify.title}</h1>
       </div>
       <div className="description">
-        <p>
-          La Fabrique est née de la réflexion de trois femmes ayant évolué près
-          de dix ans en tant que gestionnaires de projet et d’actions
-          associatives. Elle est le fruit d’observation du tissu associatif
-          local et des évolutions politiques et institutionnelles du secteur. La
-          Fabrique a vocation à répondre aux besoins que nous avons identifiés
-          au cours de nos précédentes expériences.
-          <br /> <br />
-          Nous souhaitons construire un pont entre les opérateurs et les
-          institutions afin de favoriser la création de projets pertinents et
-          participer à l’amélioration de la qualité des actions publiques.
-          Convaincues de la richesse et des atouts présents sur notre
-          territoire, nous souhaitons mettre notre expérience professionnelle au
-          service de la communauté à travers différentes offres :<br />
-          <br />
-          Intervention et animation : Nous intervenons en partenariat étroit
-          avec les avec les institutions pour promouvoir les valeurs de la
-          citoyenneté active et de l’interculturalité au travers d’évènements
-          ludiques. Ainsi nous réalisons des consultations citoyennes, nous
-          animons des débats, créons des outils pédagogiques et participons à la
-          réalisation d’événements comme la Fête de l’Europe ou les Erasmus
-          Days.
-          <br /> <br />
-          Accompagnement au portage de projet : Nous avons à cœur de faciliter
-          l'émergence de nouveaux projets en proposant aux porteurs de projets
-          locaux un soutien informatif, technique, mais aussi et surtout en
-          favorisant l’accès aux fonds européens grâce à notre expertise en la
-          matière. Nous accompagnons les opérateurs dans la compréhension du
-          cadre d’intervention des financeurs et l’ingénierie de développement
-          de projets ; de la conception à la réalisation.
-          <br />
-          <br /> Formation : La vie associative opère des mutations importantes
-          dans son fonctionnement afin de répondre aux changements auxquels elle
-          est confrontée. L’évolution du rapport à l’engagement et l’impératif
-          de professionnalisation des opérateurs, les incitent à repenser et
-          rénover leur cadre d’action. Nous formons les acteurs du territoire à
-          la compréhension des relations entre les individus grâce aux méthodes
-          de l’éducation non formelle. Convaincues de l’importance du « vivre
-          ensemble », nous souhaitons contribuer au « faire ensemble ».
-        </p>
+        {sectionSpecify.content.split("\n").map((paragraph) => (
+          <p key={sectionSpecify.id_section}>
+            {paragraph.split("**").map((text, i) => {
+              return i % 2 === 0 ? (
+                // Remplacer ## par le marqueur pour le centrage
+                text.split("##").map((part, j) => {
+                  return j % 2 === 0 ? (
+                    <span key={sectionSpecify.id_section}>{part}</span>
+                  ) : (
+                    // Encapsuler la partie centrée dans un div avec textAlign: center
+                    <div
+                      key={sectionSpecify.id_section}
+                      style={{ textAlign: "center", display: "block" }}
+                    >
+                      <span>{part}</span>
+                    </div>
+                  );
+                })
+              ) : (
+                <strong key={sectionSpecify.id_section}>{text}</strong>
+              );
+            })}
+          </p>
+        ))}
       </div>
       <div className="team-title">
         <h2>Notre équipe</h2>
@@ -168,4 +156,7 @@ function AboutUs() {
   );
 }
 
+AboutUs.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+};
 export default AboutUs;

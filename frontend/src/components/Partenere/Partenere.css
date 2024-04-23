@@ -1,10 +1,11 @@
 .partenere{
     max-width: 80vw;
     margin: auto;
+    padding-bottom: 2em;
 }
 
 .partenere h2{
-    margin-top: 3eme;
+    margin-top: 2em;
     color: #63105b;
     font-size: xx-large;
     margin-bottom: 0;
