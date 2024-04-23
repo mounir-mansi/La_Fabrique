@@ -13,35 +13,29 @@ h2 {
 h3 {
   font-size: 1.25em;
 }
-
 .p_carroussel {
   font-size: 1em;
   text-transform: lowercase;
 }
-
 .carroussel__content ul {
   padding: 0;
   margin: 0;
   position: relative;
   list-style-type: none;
 }
-
 .carroussel__content li {
   margin-bottom: 20px;
 }
-
 .image-container {
   position: relative;
   width: 20vw;
   height: 20vw;
   overflow: hidden;
 }
-
 .image-container img {
   width: 100%;
   height: 100%;
 }
-
 .overlay {
   position: absolute;
   bottom: 0;
@@ -57,17 +51,14 @@ h3 {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
 .overlay:hover {
   opacity: 1;
 }
-
 .overlay h3,
 .overlay p {
   margin: 0;
   padding: 10px;
 }
-
 .prev-button,
 .next-button {
   position: absolute;
@@ -80,15 +71,12 @@ h3 {
   cursor: pointer;
   z-index: 1;
 }
-
 .prev-button {
   left: 0;
 }
-
 .next-button {
   right: 0;
 }
-
 .dot {
   border: none;
   height: 10px;
@@ -99,21 +87,17 @@ h3 {
   display: inline-block;
   transition: background-color 0.3s ease;
 }
-
 .dot:hover {
   cursor: pointer;
 }
-
 .dot.active {
   background-color: #63105b;
 }
-
 .carroussel__title {
   text-transform: uppercase;
   margin-bottom: 20px;
   color: #63105b;
 }
-
 @media screen and (max-width: 1200px) {
   .carroussel__content {
     padding: 0;
@@ -130,7 +114,6 @@ h3 {
     height: 30vw;
     overflow: hidden;
   }
-
   .prev-button,
   .next-button {
     display: none;

@@ -23,14 +23,14 @@ function Navbar() {
 
     fetchNavbarItems();
   }, []);
+  const handleClickAdherer = (event) => {
+    // Empêcher la propagation de l'événement pour éviter l'ouverture du menu
+    event.stopPropagation();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -48,8 +48,12 @@ function Navbar() {
     5: "/contact",
     6: "https://www.helloasso.com/associations/la-fabrique-13/adhesions/adhesion",
   };
-
-  const generatePath = (id) => idToPathMap[id] || "/";
+  const generatePath = (id) => {
+    if (id === 6) {
+      return "https://www.helloasso.com/associations/la-fabrique-13/adhesions/adhesion";
+    }
+    return idToPathMap[id] || "/";
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -77,7 +81,7 @@ function Navbar() {
                 href={generatePath(item.id_navbar)}
                 target={item.id_navbar === 6 ? "_blank" : "_self"}
                 rel={item.id_navbar === 6 ? "noreferrer" : undefined}
-                onClick={toggleMenu}
+                onClick={handleClickAdherer} // Utilisez handleClickAdherer comme gestionnaire d'événements
               >
                 {item.title.trim()} |
               </a>

@@ -16,7 +16,7 @@
 }
 
 .description {
-  font-size: 1.125em; /* Taille de police augmentée en utilisant em */
+  font-size: 1.125em;
   margin-bottom: 20px;
   text-align: justify;
 }
@@ -38,45 +38,13 @@
   max-width: fit-content;
 }
 
-.card1 {
-  grid-area: 1 / 2 / 2 / 3;
-}
-.card2 {
-  grid-area: 1 / 4 / 2 / 5;
-}
-.card3 {
-  grid-area: 1 / 6 / 2 / 7;
-}
-
-/* Pour les 3 suivantes */
-.card4 {
-  grid-area: 2 / 2 / 3 / 3;
-}
-.card5 {
-  grid-area: 2 / 4 / 3 / 5;
-}
-.card6 {
-  grid-area: 2 / 6 / 3 / 7;
-}
-
-/* Pour les 3 suivantes après */
-.card7 {
-  grid-area: 3 / 2 / 4 / 3;
-}
-.card8 {
-  grid-area: 3 / 4 / 4 / 5;
-}
-.card9 {
-  grid-area: 3 / 6 / 4 / 7;
-}
-
 .card-image {
   width: 100%;
   height: auto;
 }
 
 .card-title {
-  font-size: 1.25em; /* Taille de police augmentée en utilisant em */
+  font-size: 1.25em;
   margin-top: 10px;
   text-align: center;
 }
@@ -94,14 +62,14 @@
 
 .divider-container {
   flex: 1;
-  margin-left: 20px; /* Ajustez la marge selon vos besoins */
+  margin-left: 20px;
   padding-left: 1em;
 }
 
 .divider {
   width: 100%;
   border: none;
-  border-top: 1px solid #63105b; /* Couleur et style du séparateur */
+  border-top: 1px solid #63105b;
 }
 
 .navigation,
