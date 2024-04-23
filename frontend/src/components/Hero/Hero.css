@@ -4,7 +4,8 @@
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
   );
-  height: 550px;
+  height: 34.38em;
+  width: 100vw;
   color: white;
   display: flex;
   flex-direction: column;
