@@ -77,7 +77,7 @@ function Carroussel() {
         {/* Affichage du titre du carrousel */}
         {carroussel.map((item) => (
           <h2 className="carroussel__title" key={item.id_carroussel}>
-            <i>|</i> {item.title}
+            {item.title}
           </h2>
         ))}
       </div>

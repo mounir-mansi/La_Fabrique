@@ -48,7 +48,6 @@ function Intervention({ id }) {
         </p>
       ))}
       <div className="title-content">
-        [09:05]
         <h2 className="title">{sectionSpecify.title}</h2>
         <hr className="divider" />
       </div>

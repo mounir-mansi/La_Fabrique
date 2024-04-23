@@ -39,14 +39,14 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.2em;
   margin-bottom: 10px;
 }
 
 .Footer__information,
 .Footer__contact_horaire {
   text-transform: capitalize;
-  font-size: 15px;
+  font-size: 0.95em;
 }
 
 .Footer__contact_email,

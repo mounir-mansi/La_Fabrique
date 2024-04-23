@@ -7,7 +7,7 @@
 
 .presentation h1 {
   color: #63105b;
-  font-size: 36px;
+  font-size: 3em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -15,6 +15,11 @@
 .presentation a {
   color: #63105b;
   text-decoration: underline;
+}
+
+p,
+a {
+  font-size: 1.5em;
 }
 
 @media screen and (max-width: 1200px) {
