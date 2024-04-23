@@ -4,56 +4,57 @@
 }
 
 .contact-info {
+  background-color: white;
   display: flex;
   align-items: flex-start;
-  justify-content: center; /* Centrer horizontalement les éléments */
+  justify-content: center;
 }
 
 .contact-info__image {
-  flex: 1; /* Prend la moitié de l'espace disponible */
-  padding-right: 20px; /* Marge à droite pour séparer l'image du contenu */
-  align-self: stretch; /* Étire l'image pour égaler la hauteur du contenu */
+  flex: 1;
+  padding-right: 20px;
+  align-self: stretch;
 }
 
 .contact-info__details {
   padding: 1em;
-  flex: 1; /* Prend la moitié de l'espace disponible */
+  flex: 1;
 }
 
 .contact-info h2 {
-  padding-top: 20 px;
+  padding-top: 20px;
   padding-bottom: 20px;
-  color: #63105b; /* Couleur du titre en violet */
-  font-size: 2em; /* Taille de la police du titre */
+  color: #63105b;
+  font-size: 2em;
   text-transform: uppercase;
   font-weight: bold;
 }
 
 .contact-info p,
 .contact-info__details__item span {
-  font-size: 1.25em; /* Taille de la police pour la description, le téléphone, l'e-mail et les horaires */
+  font-size: 1.25em;
 }
 
 .contact-info__details__item {
   display: flex;
   align-items: center;
   padding: 20px;
-  margin-bottom: 10px; /* Espace entre les éléments */
+  margin-bottom: 10px;
 }
 
 .contact-info__details__item img {
-  margin-right: 10px; /* Espace entre l'image et le texte */
-  max-width: 24px; /* Définit la largeur maximale de l'image */
-  height: auto; /* Permet à la hauteur de s'ajuster automatiquement */
+  margin-right: 10px;
+  max-width: 24px;
+  height: auto;
 }
 
 @media screen and (max-width: 1200px) {
   .contact-info h2 {
-    font-size: 26px; /* Taille de la police du titre */
+    font-size: 26px;
   }
   .contact-info p,
   .contact-info__details__item span {
-    font-size: 20px; /* Taille de la police pour la description, le téléphone, l'e-mail et les horaires */
+    font-size: 20px;
   }
   .contact-info__details__item {
     display: flex;

@@ -18,12 +18,11 @@
 .newsletter__title {
   margin-left: 5px;
   margin-bottom: 1.2em;
-  text-transform: semi-bold;
   font-size: 1.25em;
 }
 
 .newsletter__form {
-  display: flex; /* Pour aligner les éléments sur la même ligne */
+  display: flex;
 }
 
 .newsletter__input input[type="text"] {
@@ -52,8 +51,6 @@
 
 @media screen and (max-width: 1200px) {
   .newsletter__container {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
   }

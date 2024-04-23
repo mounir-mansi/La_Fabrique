@@ -26,8 +26,7 @@ function ContactForm() {
           <div className="button-container">
             <button type="submit">
               <div className="button">
-                {" "}
-                <div className="button-text">ENVOYER </div>{" "}
+                <div className="button-text">ENVOYER</div>
                 <img className="button-icon" src={Send} alt="icon envoyer" />
               </div>
             </button>

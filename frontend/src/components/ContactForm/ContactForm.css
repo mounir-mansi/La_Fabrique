@@ -12,7 +12,8 @@
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 1.5em;
+  margin-bottom: 1em;
 }
 
 .input-group {
@@ -33,6 +34,7 @@ h1 {
   color: black;
   font-size: 16px;
 }
+
 .input-group input[type="text"]:first-child {
   margin-right: 10px;
 }
