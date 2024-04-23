@@ -1,4 +1,5 @@
 .Navbar {
+  width: 100vw;
   color: white;
   padding: 1.1rem;
   height: 3.75em;
@@ -65,9 +66,11 @@ ul > li > a:hover {
 
 .Lang > a {
   font-size: 1.2em;
+  text-decoration: none;
+  color: white;
 }
 
-.Lang:hover {
+.Lang > a:hover {
   color: #63105b;
 }
 
@@ -138,11 +141,15 @@ img:hover {
 
 .Navbar ul > li:not(:last-child) > a::after {
   content: "|";
-  margin-left: 0.5em; /* Ajoute une marge à gauche pour séparer les éléments */
+  margin-left: 0.5em;
 }
 
 @media screen and (max-width: 1475px) {
-  ul > li {
+  .Navbar ul > li > a::after {
+    display: none;
+  }
+
+  .Navbar__content > ul > li {
     width: 100vw;
   }
 
@@ -171,10 +178,6 @@ img:hover {
 
   .MenuItems.open li:last-child > a {
     border-bottom: none;
-  }
-
-  ul > li > a::after {
-    content: none;
   }
 
   .Navbar {
