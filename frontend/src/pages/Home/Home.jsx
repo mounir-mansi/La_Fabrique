@@ -15,9 +15,9 @@ export default function Home() {
         <Presentation />
         <ArticleHome />
         <Carroussel />
-        <Newsletter />
-        <Footer />
       </div>
+      <Newsletter />
+      <Footer />
     </div>
   );
 }
