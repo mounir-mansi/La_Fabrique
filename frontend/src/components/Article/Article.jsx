@@ -113,34 +113,44 @@ function Article() {
           </div>
           <div className="container-article">
             <h1>{articleSpecify.title}</h1>
-            {articleSpecify.content.split("\n").map((paragraph, index) => {
+            {articleSpecify.content.split("\n").map((paragraph) => {
               // Vérifier si le paragraphe commence par "--"
               const isIndented = paragraph.trim().startsWith("-");
               // Utiliser une expression régulière pour rechercher le texte à colorier
               const coloredParagraphs = paragraph.split(/\|\|(.*?)\|\|/);
 
               return (
-                <p key={index} style={{ marginLeft: isIndented ? "5%" : 0 }}>
+                <p
+                  key={articleSpecify.id_article}
+                  style={{ marginLeft: isIndented ? "5%" : 0 }}
+                >
                   {/* Mettre en gras et en couleur les caractères spécifiques */}
                   {coloredParagraphs.map((text, i) => {
                     // Si l'index est impair, le texte doit être colorié et en gras
                     if (i % 2 !== 0) {
                       return (
-                        <span key={i} className="span-color">
+                        <span
+                          key={articleSpecify.id_article}
+                          className="span-color"
+                        >
                           <strong>{text}</strong>
                         </span>
                       );
                     }
                     // Sinon, si le texte n'est pas colorié, mais doit être en gras
                     return (
-                      <span key={i}>
+                      <span key={articleSpecify.id_article}>
                         {text
                           .split("**")
                           .map((innerText, j) =>
                             j % 2 === 0 ? (
-                              <span key={j}>{innerText}</span>
+                              <span key={articleSpecify.id_article}>
+                                {innerText}
+                              </span>
                             ) : (
-                              <strong key={j}>{innerText}</strong>
+                              <strong key={articleSpecify.id_article}>
+                                {innerText}
+                              </strong>
                             )
                           )}
                       </span>
