@@ -98,7 +98,10 @@ function Intervention({ id }) {
 
   const sectionSpecify = sections.sections[id];
   let { articles } = article;
-  articles = articles.filter((articletheme) => articletheme.id_theme === id);
+  articles = articles.filter(
+    (articletheme) => articletheme.id_theme - 1 === id
+  );
+  console.info(articles);
 
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;

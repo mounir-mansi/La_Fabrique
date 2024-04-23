@@ -10,7 +10,7 @@ function QuiSommesNous() {
   return (
     <div>
       <Hero id={3} />
-      <Qsn id={1} />
+      <Qsn id={3} />
       <Partenere />
       <Newsletter />
       <Footer />

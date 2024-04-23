@@ -15,6 +15,11 @@
 .about-us h2{
   white-space: nowrap;
   color: #63105b;
+  padding-right: 1em;
+}
+
+.divider{
+  color: #63105b;
 }
 
 .about-us h3{
