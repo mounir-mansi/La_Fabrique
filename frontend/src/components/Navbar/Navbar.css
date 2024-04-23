@@ -136,7 +136,47 @@ img:hover {
   padding: 10px;
 }
 
+ul > li > a::after {
+  content: "|";
+  margin-left: 0.5em;
+}
+
 @media screen and (max-width: 1475px) {
+  ul > li {
+    width: 100vw;
+  }
+
+  .MenuItems.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: black;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .MenuItems.open li {
+    margin-right: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .MenuItems.open li:not(:last-child) > a {
+    border-bottom: 1px solid white;
+    width: 80%;
+  }
+
+  .MenuItems.open li:last-child > a {
+    border-bottom: none;
+  }
+
+  ul > li > a::after {
+    content: none;
+  }
+
   .Navbar {
     background-color: black !important;
   }

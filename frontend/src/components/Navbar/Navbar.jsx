@@ -83,7 +83,7 @@ function Navbar() {
                 rel={item.id_navbar === 6 ? "noreferrer" : undefined}
                 onClick={handleClickAdherer} // Utilisez handleClickAdherer comme gestionnaire d'événements
               >
-                {item.title.trim()} |
+                {item.title.trim()}
               </a>
             </li>
           ))}
