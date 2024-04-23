@@ -4,6 +4,7 @@
 }
 
 .contact-info {
+  background-color: white;
   display: flex;
   align-items: flex-start;
   justify-content: center;
