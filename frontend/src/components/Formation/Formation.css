@@ -1,7 +1,7 @@
 .formation {
-    width: 80vw;
-    margin: auto;
-  }
+  width: 80vw;
+  margin: auto;
+}
 
   .formation h1{
     text-align: center;
@@ -172,19 +172,44 @@
     grid-template-rows: repeat(9, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-    .card1 { grid-area: 1 / 1 / 2 / 2; }
-    .card2 { grid-area: 2 / 1 / 3 / 2; }
-    .card3 { grid-area: 3 / 1 / 4 / 2; }
-    .card4 { grid-area: 4 / 1 / 5 / 2; }
-    .card5 { grid-area: 5 / 1 / 6 / 2; }
-    .card6 { grid-area: 6 / 1 / 7 / 2; }
-    .card7 { grid-area: 7 / 1 / 8 / 2; }
-    .card8 { grid-area: 8 / 1 / 9 / 2; }
-    .card9 { grid-area: 9 / 1 / 10 / 2; }
-    .card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8, .card9 {
-      margin: auto;
-    }
-    
   }
+
+  .card1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .card2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .card3 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .card4 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .card5 {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+  .card6 {
+    grid-area: 6 / 1 / 7 / 2;
+  }
+  .card7 {
+    grid-area: 7 / 1 / 8 / 2;
+  }
+  .card8 {
+    grid-area: 8 / 1 / 9 / 2;
+  }
+  .card9 {
+    grid-area: 9 / 1 / 10 / 2;
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6,
+  .card7,
+  .card8,
+  .card9 {
+    margin: auto;
+  }
+}

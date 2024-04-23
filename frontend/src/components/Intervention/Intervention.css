@@ -1,187 +1,253 @@
 .intervention {
-    width: 80vw;
+  width: 80vw;
+  margin: auto;
+  text-align: justify;
+}
+
+.intervention h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.intervention h2 {
+  font-size: 2em;
+}
+
+.intervention h3 {
+  font-size: 1.25em;
+}
+.navigation > .next > button > p,
+.navigation > .previous > button > p {
+  margin-top: 1.5em;
+  font-size: 1.2em;
+}
+
+.intervention h2,
+.intervention h3,
+.intervention h1,
+.divider {
+  color: #63105b;
+}
+
+.description {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.card-grid {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 2em;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  padding-bottom: 1em;
+  max-width: fit-content;
+}
+
+.card1 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.card2 {
+  grid-area: 1 / 4 / 2 / 5;
+}
+.card3 {
+  grid-area: 1 / 6 / 2 / 7;
+}
+
+/* Pour les 3 suivantes */
+.card4 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.card5 {
+  grid-area: 2 / 4 / 3 / 5;
+}
+.card6 {
+  grid-area: 2 / 6 / 3 / 7;
+}
+
+/* Pour les 3 suivantes après */
+.card7 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.card8 {
+  grid-area: 3 / 4 / 4 / 5;
+}
+.card9 {
+  grid-area: 3 / 6 / 4 / 7;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.title-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  white-space: nowrap;
+  padding-right: 1em;
+}
+
+.divider-container {
+  flex: 1;
+  margin-left: 20px; /* Ajustez la marge selon vos besoins */
+  padding-left: 1em;
+}
+
+.divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #63105b; /* Couleur et style du séparateur */
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.navigation button:hover {
+  text-decoration: underline;
+}
+
+.previous {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.previous p {
+  text-align: left;
+  margin: 0;
+}
+
+.next {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.next p {
+  text-align: right;
+  margin: 0;
+}
+
+.navigation button:last-child {
+  margin-bottom: 0;
+}
+
+.navigation button p {
+  color: #63105b;
+}
+
+@media screen and (max-width: 1200px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     margin: auto;
   }
-
-  .intervention h1{
-    text-align: center;
+  .card1 {
+    grid-area: 1 / 2 / 2 / 3;
   }
-  
-  .intervention h2,
-  .intervention h3,
-  .intervention h1,
-  .divider {
-    color: #63105b;
+  .card2 {
+    grid-area: 1 / 4 / 2 / 5;
   }
-  
-  .description {
-    font-size: 1.125em; /* Taille de police augmentée en utilisant em */
-    margin-bottom: 20px;
-    text-align: justify;
+  .card3 {
+    grid-area: 2 / 2 / 3 / 3;
   }
-  
-  .card-grid {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 2em;
+  .card4 {
+    grid-area: 2 / 4 / 3 / 5;
   }
-  
-  .card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    padding-bottom: 1em;
-    max-width: fit-content;
+  .card5 {
+    grid-area: 3 / 2 / 4 / 3;
   }
-  
-  .card1 { grid-area: 1 / 2 / 2 / 3; }
-  .card2 { grid-area: 1 / 4 / 2 / 5; }
-  .card3 { grid-area: 1 / 6 / 2 / 7; }
-  
-  /* Pour les 3 suivantes */
-  .card4 { grid-area: 2 / 2 / 3 / 3; }
-  .card5 { grid-area: 2 / 4 / 3 / 5; }
-  .card6 { grid-area: 2 / 6 / 3 / 7; }
-  
-  /* Pour les 3 suivantes après */
-  .card7 { grid-area: 3 / 2 / 4 / 3; }
-  .card8 { grid-area: 3 / 4 / 4 / 5; }
-  .card9 { grid-area: 3 / 6 / 4 / 7; }
-  
-  .card-image {
-    width: 100%;
-    height: auto;
+  .card6 {
+    grid-area: 3 / 4 / 4 / 5;
   }
-  
-  .card-title {
-    font-size: large;
-    margin-top: 10px;
-    text-align: justify;
+  .card7 {
+    grid-area: 4 / 2 / 5 / 3;
   }
-  
-  .title-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
+  .card8 {
+    grid-area: 4 / 4 / 5 / 5;
   }
-  
-  .title {
-    white-space: nowrap;
-    padding-right: 1em;
+  .card9 {
+    grid-area: 5 / 2 / 6 / 3;
   }
-  
-  .divider-container {
-    flex: 1;
-    margin-left: 20px; /* Ajustez la marge selon vos besoins */
-    padding-left: 1em;
-  }
-  
-  .divider {
-    width: 100%;
-    border: none;
-    border-top: 1px solid   #63105b;
-    ; /* Couleur et style du séparateur */
-  }
-  
-  .navigation, .navigation button, .navigation a {
-    font-size: 24px;
-  }
-  
-  .navigation {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .navigation button {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .navigation button:hover {
-    text-decoration: underline;
-  }
-  
-  .previous {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-  
-  .previous p {
-    text-align: left;
-    margin: 0;
-  }
-  
-  .next {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-  }
-  
-  .next p {
-    text-align: right;
-    margin: 0;
-  }
-  
-  .navigation button:last-child {
-    margin-bottom: 0;
-  }
-  
-  .navigation button p {
-    color: #63105b;
-  }
-  
-  
-  @media screen and (max-width: 1200px) {
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(5, 1fr);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
-      margin: auto;
-      }
-    .card1 { grid-area: 1 / 2 / 2 / 3; }
-    .card2 { grid-area: 1 / 4 / 2 / 5; }
-    .card3 { grid-area: 2 / 2 / 3 / 3; }
-    .card4 { grid-area: 2 / 4 / 3 / 5; }
-    .card5 { grid-area: 3 / 2 / 4 / 3; }
-    .card6 { grid-area: 3 / 4 / 4 / 5; }
-    .card7 { grid-area: 4 / 2 / 5 / 3; }
-    .card8 { grid-area: 4 / 4 / 5 / 5; }
-    .card9 { grid-area: 5 / 2 / 6 / 3; }
-  }
-  @media screen and (max-width: 1200px) {
-  
+}
+@media screen and (max-width: 1200px) {
   .card-grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(9, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-    .card1 { grid-area: 1 / 1 / 2 / 2; }
-    .card2 { grid-area: 2 / 1 / 3 / 2; }
-    .card3 { grid-area: 3 / 1 / 4 / 2; }
-    .card4 { grid-area: 4 / 1 / 5 / 2; }
-    .card5 { grid-area: 5 / 1 / 6 / 2; }
-    .card6 { grid-area: 6 / 1 / 7 / 2; }
-    .card7 { grid-area: 7 / 1 / 8 / 2; }
-    .card8 { grid-area: 8 / 1 / 9 / 2; }
-    .card9 { grid-area: 9 / 1 / 10 / 2; }
-    .card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8, .card9 {
-      margin: auto;
-    }
-    
   }
+
+  .card1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .card2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .card3 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .card4 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .card5 {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+  .card6 {
+    grid-area: 6 / 1 / 7 / 2;
+  }
+  .card7 {
+    grid-area: 7 / 1 / 8 / 2;
+  }
+  .card8 {
+    grid-area: 8 / 1 / 9 / 2;
+  }
+  .card9 {
+    grid-area: 9 / 1 / 10 / 2;
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6,
+  .card7,
+  .card8,
+  .card9 {
+    margin: auto;
+  }
+}

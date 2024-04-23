@@ -116,22 +116,48 @@ function Article() {
             {articleSpecify.content.split("\n").map((paragraph, index) => {
               // Vérifier si le paragraphe commence par "--"
               const isIndented = paragraph.trim().startsWith("-");
+              // Utiliser une expression régulière pour rechercher le texte à colorier
+              const coloredParagraphs = paragraph.split(/\|\|(.*?)\|\|/);
 
               return (
                 <p key={index} style={{ marginLeft: isIndented ? "5%" : 0 }}>
-                  {/* Mettre en gras les caractères spécifiques */}
-                  {paragraph.split("**").map((text, i) => {
-                    return i % 2 === 0 ? (
-                      <span key={i}>{text}</span>
-                    ) : (
-                      <strong key={i}>{text}</strong>
+                  {/* Mettre en gras et en couleur les caractères spécifiques */}
+                  {coloredParagraphs.map((text, i) => {
+                    // Si l'index est impair, le texte doit être colorié et en gras
+                    if (i % 2 !== 0) {
+                      return (
+                        <span key={i} className="span-color">
+                          <strong>{text}</strong>
+                        </span>
+                      );
+                    }
+                    // Sinon, si le texte n'est pas colorié, mais doit être en gras
+                    return (
+                      <span key={i}>
+                        {text
+                          .split("**")
+                          .map((innerText, j) =>
+                            j % 2 === 0 ? (
+                              <span key={j}>{innerText}</span>
+                            ) : (
+                              <strong key={j}>{innerText}</strong>
+                            )
+                          )}
+                      </span>
                     );
                   })}
                 </p>
               );
             })}
 
-            <a href={articleSpecify.link}>{articleSpecify.link}</a>
+            <a href={articleSpecify.link}>
+              {articleSpecify.link.split("\n").map((paragraph) => (
+                <div key={articleSpecify.id_article}>
+                  {paragraph}
+                  <br />
+                </div>
+              ))}
+            </a>
             <br />
             <br />
             <div className="content-img">
