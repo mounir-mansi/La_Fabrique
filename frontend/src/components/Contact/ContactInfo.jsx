@@ -1,19 +1,15 @@
 import React from "react";
 import "./ContactInfo.css";
-import { useContact } from "../../context/ContactContext"; // Remplacez le chemin d'accès approprié
+import { useContact } from "../../context/ContactContext";
 
 function ContactInfo() {
   const { contacts } = useContact();
-  console.info({ contacts });
 
-  // Vérifiez d'abord si les contacts sont définis
   if (!contacts || contacts.length === 0) {
     return <div>Aucune information de contact disponible</div>;
   }
 
-  // Utilisez le premier contact de la liste
   const contact = contacts[0];
-
   const { title, content, phone, email, horaire } = contact;
 
   return (
