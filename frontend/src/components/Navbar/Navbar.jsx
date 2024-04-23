@@ -41,12 +41,12 @@ function Navbar() {
   }, []);
 
   const idToPathMap = {
-    1: "/qui-sommes-nous",
-    2: "/intervention-et-animation",
-    3: "/formation",
-    4: "/accompagnement-au-portage-de-projet",
+    4: "/qui-sommes-nous",
+    1: "/intervention-et-animation",
+    2: "/formation",
+    3: "/accompagnement-au-portage-de-projet",
     5: "/contact",
-    6: "https://google.fr",
+    6: "https://www.helloasso.com/associations/la-fabrique-13/adhesions/adhesion",
   };
 
   const generatePath = (id) => idToPathMap[id] || "/";

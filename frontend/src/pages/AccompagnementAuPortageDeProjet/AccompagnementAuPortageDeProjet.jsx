@@ -9,7 +9,7 @@ function AccompagnementAuPortageDeProjet() {
   return (
     <div>
       <Hero id={6} />
-      <Accompagnement id={3} />
+      <Accompagnement id={2} />
       <Newsletter />
       <Footer />
     </div>
