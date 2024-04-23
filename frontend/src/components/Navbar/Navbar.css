@@ -66,9 +66,11 @@ ul > li > a:hover {
 
 .Lang > a {
   font-size: 1.2em;
+  text-decoration: none;
+  color: white;
 }
 
-.Lang:hover {
+.Lang > a:hover {
   color: #63105b;
 }
 
