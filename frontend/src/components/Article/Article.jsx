@@ -51,11 +51,64 @@ function Article() {
               src="../src/assets/Logo/PNG/LOGO-LF-BLANC.png"
               alt="Hero"
             />
-            <h1>{articleSpecify.title}</h1>
           </div>
           <div className="container-article">
-            <p>{articleSpecify.content}</p>
-            <a href={articleSpecify.link}>{articleSpecify.link}</a>
+            <h1>{articleSpecify.title}</h1>
+            {articleSpecify.content.split("\n").map((paragraph) => {
+              // Vérifier si le paragraphe commence par "--"
+              const isIndented = paragraph.trim().startsWith("-");
+              // Utiliser une expression régulière pour rechercher le texte à colorier
+              const coloredParagraphs = paragraph.split(/\|\|(.*?)\|\|/);
+
+              return (
+                <p
+                  key={articleSpecify.id_article}
+                  style={{ marginLeft: isIndented ? "5%" : 0 }}
+                >
+                  {/* Mettre en gras et en couleur les caractères spécifiques */}
+                  {coloredParagraphs.map((text, i) => {
+                    // Si l'index est impair, le texte doit être colorié et en gras
+                    if (i % 2 !== 0) {
+                      return (
+                        <span
+                          key={articleSpecify.id_article}
+                          className="span-color"
+                        >
+                          <strong>{text}</strong>
+                        </span>
+                      );
+                    }
+                    // Sinon, si le texte n'est pas colorié, mais doit être en gras
+                    return (
+                      <span key={articleSpecify.id_article}>
+                        {text
+                          .split("**")
+                          .map((innerText, j) =>
+                            j % 2 === 0 ? (
+                              <span key={articleSpecify.id_article}>
+                                {innerText}
+                              </span>
+                            ) : (
+                              <strong key={articleSpecify.id_article}>
+                                {innerText}
+                              </strong>
+                            )
+                          )}
+                      </span>
+                    );
+                  })}
+                </p>
+              );
+            })}
+
+            <a href={articleSpecify.link}>
+              {articleSpecify.link.split("\n").map((paragraph) => (
+                <div key={articleSpecify.id_article}>
+                  {paragraph}
+                  <br />
+                </div>
+              ))}
+            </a>
             <br />
             <br />
             <div className="content-img">

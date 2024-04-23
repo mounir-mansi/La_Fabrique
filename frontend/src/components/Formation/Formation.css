@@ -3,205 +3,169 @@
   margin: auto;
 }
 
-.formation h1 {
-  font-size: 2em;
-  text-align: center;
-}
-.accompagnement h1 {
-  text-align: center;
-}
-
-.formation h2,
-.formation h3,
-.formation h1,
-.divider {
-  color: #63105b;
-}
-
-.description {
-  font-size: 1.125em; /* Taille de police augmentée en utilisant em */
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-.card-grid {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 2em;
-}
-
-.card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  padding-bottom: 1em;
-  max-width: fit-content;
-}
-
-.card1 {
-  grid-area: 1 / 2 / 2 / 3;
-}
-.card2 {
-  grid-area: 1 / 4 / 2 / 5;
-}
-.card3 {
-  grid-area: 1 / 6 / 2 / 7;
-}
-
-/* Pour les 3 suivantes */
-.card4 {
-  grid-area: 2 / 2 / 3 / 3;
-}
-.card5 {
-  grid-area: 2 / 4 / 3 / 5;
-}
-.card6 {
-  grid-area: 2 / 6 / 3 / 7;
-}
-
-/* Pour les 3 suivantes après */
-.card7 {
-  grid-area: 3 / 2 / 4 / 3;
-}
-.card8 {
-  grid-area: 3 / 4 / 4 / 5;
-}
-.card9 {
-  grid-area: 3 / 6 / 4 / 7;
-}
-
-.card-image {
-  width: 100%;
-  height: auto;
-}
-
-.card-title {
-  font-size: 1.25em; /* Taille de police augmentée en utilisant em */
-  margin-top: 10px;
-  text-align: center;
-}
-
-.title-content {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.title {
-  white-space: nowrap;
-  padding-right: 1em;
-}
-
-.divider-container {
-  flex: 1;
-  margin-left: 20px; /* Ajustez la marge selon vos besoins */
-  padding-left: 1em;
-}
-
-.divider {
-  width: 100%;
-  border: none;
-  border-top: 1px solid #63105b; /* Couleur et style du séparateur */
-}
-
-.navigation,
-.navigation button,
-.navigation a {
-  font-size: 24px;
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-}
-
-.navigation button {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  font-size: inherit;
-  color: inherit;
-  cursor: pointer;
-  outline: none;
-}
-
-.navigation button:hover {
-  text-decoration: underline;
-}
-
-.previous {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.previous p {
-  text-align: left;
-  margin: 0;
-}
-
-.next {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
-}
-
-.next p {
-  text-align: right;
-  margin: 0;
-}
-
-.navigation button:last-child {
-  margin-bottom: 0;
-}
-
-.navigation button p {
-  color: #63105b;
-}
-
-@media screen and (max-width: 1200px) {
+  .formation h1{
+    text-align: center;
+  }
+  .formation h1{
+    text-align: center;
+  }
+  
+  .formation h2,
+  .formation h3,
+  .formation h1,
+  .divider {
+    color: #63105b;
+  }
+  
+  .description {
+    font-size: 1.125em; /* Taille de police augmentée en utilisant em */
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
   .card-grid {
+    max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
     grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    margin: auto;
+    grid-row-gap: 2em;
   }
-  .card1 {
-    grid-area: 1 / 2 / 2 / 3;
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 1em;
+    max-width: fit-content;
   }
-  .card2 {
-    grid-area: 1 / 4 / 2 / 5;
+  
+  .card1 { grid-area: 1 / 2 / 2 / 3; }
+  .card2 { grid-area: 1 / 4 / 2 / 5; }
+  .card3 { grid-area: 1 / 6 / 2 / 7; }
+  
+  /* Pour les 3 suivantes */
+  .card4 { grid-area: 2 / 2 / 3 / 3; }
+  .card5 { grid-area: 2 / 4 / 3 / 5; }
+  .card6 { grid-area: 2 / 6 / 3 / 7; }
+  
+  /* Pour les 3 suivantes après */
+  .card7 { grid-area: 3 / 2 / 4 / 3; }
+  .card8 { grid-area: 3 / 4 / 4 / 5; }
+  .card9 { grid-area: 3 / 6 / 4 / 7; }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
   }
-  .card3 {
-    grid-area: 2 / 2 / 3 / 3;
+  
+  .card-title {
+    font-size: large;
+    margin-top: 10px;
+    text-align: justify;
   }
-  .card4 {
-    grid-area: 2 / 4 / 3 / 5;
+  
+  .title-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
-  .card5 {
-    grid-area: 3 / 2 / 4 / 3;
+  
+  .title {
+    white-space: nowrap;
+    padding-right: 1em;
   }
-  .card6 {
-    grid-area: 3 / 4 / 4 / 5;
+  
+  .divider-container {
+    flex: 1;
+    margin-left: 20px; /* Ajustez la marge selon vos besoins */
+    padding-left: 1em;
   }
-  .card7 {
-    grid-area: 4 / 2 / 5 / 3;
+  
+  .divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid  #63105b;
+    ; /* Couleur et style du séparateur */
   }
-  .card8 {
-    grid-area: 4 / 4 / 5 / 5;
+  
+  .navigation, .navigation button, .navigation a {
+    font-size: 24px;
   }
-  .card9 {
-    grid-area: 5 / 2 / 6 / 3;
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
   }
-}
-@media screen and (max-width: 1200px) {
+  
+  .navigation button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .navigation button:hover {
+    text-decoration: underline;
+  }
+  
+  .previous {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .previous p {
+    text-align: left;
+    margin: 0;
+  }
+  
+  .next {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+  
+  .next p {
+    text-align: right;
+    margin: 0;
+  }
+  
+  .navigation button:last-child {
+    margin-bottom: 0;
+  }
+  
+  .navigation button p {
+    color: #63105b;
+  }
+  
+  
+  @media screen and (max-width: 1200px) {
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      margin: auto;
+      }
+    .card1 { grid-area: 1 / 2 / 2 / 3; }
+    .card2 { grid-area: 1 / 4 / 2 / 5; }
+    .card3 { grid-area: 2 / 2 / 3 / 3; }
+    .card4 { grid-area: 2 / 4 / 3 / 5; }
+    .card5 { grid-area: 3 / 2 / 4 / 3; }
+    .card6 { grid-area: 3 / 4 / 4 / 5; }
+    .card7 { grid-area: 4 / 2 / 5 / 3; }
+    .card8 { grid-area: 4 / 4 / 5 / 5; }
+    .card9 { grid-area: 5 / 2 / 6 / 3; }
+  }
+  @media screen and (max-width: 1200px) {
+  
   .card-grid {
     display: grid;
     grid-template-columns: 1fr;
