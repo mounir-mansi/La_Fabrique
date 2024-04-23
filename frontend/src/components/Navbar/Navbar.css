@@ -136,9 +136,9 @@ img:hover {
   padding: 10px;
 }
 
-ul > li > a::after {
+.Navbar ul > li:not(:last-child) > a::after {
   content: "|";
-  margin-left: 0.5em;
+  margin-left: 0.5em; /* Ajoute une marge à gauche pour séparer les éléments */
 }
 
 @media screen and (max-width: 1475px) {
