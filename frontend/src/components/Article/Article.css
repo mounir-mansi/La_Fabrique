@@ -46,7 +46,7 @@
   background-color: black;
 }
 
-.Hero-article > h1 {
+/* .Hero-article > h1 {
   background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
   text-align: center;
@@ -54,10 +54,15 @@
   padding: 1rem;
   position: absolute;
   bottom: 0;
-}
+} */
 .container-article{
   width: 80vw;
   margin: auto;
+}
+.container-article h1{
+  text-align: center;
+  color: #63105b;
+  font-size: xx-large;
 }
 
 a {

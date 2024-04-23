@@ -110,10 +110,27 @@ function Article() {
               src="../src/assets/Logo/PNG/LOGO-LF-BLANC.png"
               alt="Hero"
             />
-            <h1>{articleSpecify.title}</h1>
           </div>
           <div className="container-article">
-            <p>{articleSpecify.content}</p>
+            <h1>{articleSpecify.title}</h1>
+            {articleSpecify.content.split("\n").map((paragraph, index) => {
+              // Vérifier si le paragraphe commence par "--"
+              const isIndented = paragraph.trim().startsWith("-");
+
+              return (
+                <p key={index} style={{ marginLeft: isIndented ? "5%" : 0 }}>
+                  {/* Mettre en gras les caractères spécifiques */}
+                  {paragraph.split("**").map((text, i) => {
+                    return i % 2 === 0 ? (
+                      <span key={i}>{text}</span>
+                    ) : (
+                      <strong key={i}>{text}</strong>
+                    );
+                  })}
+                </p>
+              );
+            })}
+
             <a href={articleSpecify.link}>{articleSpecify.link}</a>
             <br />
             <br />

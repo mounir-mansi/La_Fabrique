@@ -57,9 +57,9 @@
 }
 
 .card-title {
-  font-size: 1.25em; /* Taille de police augmentée en utilisant em */
+  font-size: large;
   margin-top: 10px;
-  text-align: center;
+  text-align: justify;
 }
 
 .title-content {
