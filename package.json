@@ -34,6 +34,7 @@
     "husky": "^8.0.3"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "carousel": "^0.0.3",
