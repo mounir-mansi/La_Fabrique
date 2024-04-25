@@ -111,7 +111,10 @@ function ContactForm() {
               X
             </button>
             <div>
-              Merci pour votre message ! Nous vous répondrons dès que possible.
+              <h4 className="dialog-title">
+                Merci pour votre message ! Nous vous répondrons dès que
+                possible.
+              </h4>
             </div>
           </div>
         </div>
