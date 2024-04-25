@@ -10,6 +10,8 @@
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "@formspree/react": "^2.5.1",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "prop-types": "^15.8.1",
