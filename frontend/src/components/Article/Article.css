@@ -88,7 +88,8 @@ a {
 p,
 .navigation,
 .navigation button,
-a {
+a
+,li {
   font-size: 24px;
 }
 
@@ -139,6 +140,18 @@ a {
   margin-bottom: 0;
 }
 
+.list{
+  display: flex;
+  flex-direction: column;
+  list-style-type: disc;
+  text-transform: none;
+  padding-left: 3em;
+  max-width: 100%;
+}
+
+.list li{
+  width: 100%;
+}
 @media screen and (max-width: 768px) {
   p,
   .navigation,

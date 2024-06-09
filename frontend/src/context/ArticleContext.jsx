@@ -13,7 +13,7 @@ export function ArticleProvider({ children }) {
 
   const getArticles = async () => {
     try {
-      const response = await fetch(`${hostname}/article`);
+      const response = await fetch(`${hostname}/article`); // Utilisez l'endpoint correspondant à la nouvelle table "articles"
       if (response.ok) {
         const data = await response.json();
         setArticles(data);

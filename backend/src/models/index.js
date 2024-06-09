@@ -39,6 +39,8 @@ const PartnerManager = require("./Manager/PartnerManager");
 const SectionManager = require("./Manager/SectionManager");
 const TeamManager = require("./Manager/TeamManager");
 const ThemeManager = require("./Manager/ThemeManager");
+const SectionArticleManager = require("./Manager/SectionArticleManager");
+const ElementListManager = require("./Manager/ElementListManager");
 
 models.article = new ArticleManager();
 models.article.setDatabase(pool);
@@ -69,6 +71,12 @@ models.team.setDatabase(pool);
 
 models.themeManager = new ThemeManager();
 models.themeManager.setDatabase(pool);
+
+models.sectionArticle = new SectionArticleManager();
+models.sectionArticle.setDatabase(pool);
+
+models.ElementList = new ElementListManager();
+models.ElementList.setDatabase(pool);
 
 const handler = {
   get(obj, prop) {

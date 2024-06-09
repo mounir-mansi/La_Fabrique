@@ -2,7 +2,7 @@ const AbstractManager = require("../AbstractManager/AbstractManager");
 
 class ArticleManager extends AbstractManager {
   constructor() {
-    super({ table: "article" });
+    super({ table: "articles" });
   }
 
   findAll() {
@@ -24,29 +24,27 @@ class ArticleManager extends AbstractManager {
 
   insert(article) {
     return this.database.query(
-      `INSERT INTO ${this.table} (id_theme, title, content, picture, date, link) VALUES (?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (title, description, date, picture, picture_hero) VALUES (?, ?, ?, ?, ?)`,
       [
-        article.id_theme,
         article.title,
-        article.content,
-        article.picture,
+        article.description,
         article.date,
-        article.link,
+        article.picture,
+        article.picture_hero,
       ]
     );
   }
 
   update(article) {
     return this.database.query(
-      `UPDATE ${this.table} SET id_theme = ?, title = ?, content = ?, picture = ?, date = ?, link = ? WHERE id_article = ?`,
+      `UPDATE ${this.table} SET title = ?, description = ?, date = ?, picture = ?, picture_hero = ? WHERE id_article = ?`,
       [
-        article.id_theme,
         article.title,
-        article.content,
-        article.picture,
+        article.description,
         article.date,
-        article.link,
-        article.id,
+        article.picture,
+        article.picture_hero,
+        article.id_article,
       ]
     );
   }

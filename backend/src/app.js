@@ -52,6 +52,8 @@ const PartnerRouter = require("./routers/PartnerRouter");
 const SectionRouter = require("./routers/SectionRouter");
 const TeamRouter = require("./routers/TeamRouter");
 const ThemeRouter = require("./routers/ThemeRouter");
+const SectionArticleRouter = require("./routers/SectionArticleRouter");
+const ElementListRouter = require("./routers/ElementListRouter");
 
 app.use(ArticleRouter);
 app.use(CarrousselRouter);
@@ -63,6 +65,8 @@ app.use(PartnerRouter);
 app.use(SectionRouter);
 app.use(TeamRouter);
 app.use(ThemeRouter);
+app.use(SectionArticleRouter);
+app.use(ElementListRouter);
 
 // serve the `backend/public` folder for public resources
 

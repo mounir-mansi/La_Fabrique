@@ -1,38 +1,37 @@
-.partenere{
-    max-width: 80vw;
-    margin: auto;
-    padding-bottom: 2em;
+.partenere {
+  max-width: 80vw;
+  margin: auto;
+  padding-bottom: 2em;
 }
 
-.partenere h2{
-    margin-top: 2em;
-    color: #63105b;
-    font-size: xx-large;
-    margin-bottom: 0;
+.partenere h2 {
+  margin-top: 2em;
+  color: #63105b;
+  font-size: xx-large;
+  margin-bottom: 0;
 }
 
 .card-partenere {
-    display: grid; /* Utilisation de CSS Grid */
-    align-items: center;
-    grid-template-columns: repeat(4, 1fr); /* Quatre colonnes de largeur égale */
-    gap: 10px; /* Espacement entre les images */
-    padding-left: 1em;
-  }
-  
-  .picture-partenere {
-    justify-content: center;
-    max-width: 100%; /* Pour que les images remplissent la largeur de leur conteneur */
-    max-height: 150px; /* Pour maintenir le ratio de l'image */
-    margin: auto;
-  }
-  
-  @media screen and (max-width: 1200px){
-    .card-partenere {
-        grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
-    }
-    
-    .picture-partenere {
-        margin: auto; /* Centrer les images horizontalement */
-    }
+  display: grid; /* Utilisation de CSS Grid */
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr); /* Quatre colonnes de largeur égale */
+  gap: 10px; /* Espacement entre les images */
+  padding-left: 1em;
 }
-      
+
+.picture-partenere {
+  justify-content: center;
+  max-width: 100%; /* Pour que les images remplissent la largeur de leur conteneur */
+  max-height: 150px; /* Pour maintenir le ratio de l'image */
+  margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .card-partenere {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
+  }
+
+  .picture-partenere {
+    margin: auto; /* Centrer les images horizontalement */
+  }
+}

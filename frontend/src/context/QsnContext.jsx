@@ -17,7 +17,6 @@ export function TeamProvider({ children }) {
       if (response.ok) {
         const data = await response.json();
         setTeamMembers(data);
-        console.info("data", data);
       } else {
         console.error("Erreur lors de la requête:", response.statusText);
       }
